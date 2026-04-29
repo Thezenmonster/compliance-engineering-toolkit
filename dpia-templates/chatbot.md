@@ -148,4 +148,4 @@ User → Web/WhatsApp interface → Your server (chatbot orchestrator)
 
 ---
 
-*Template by Michael K. Onyekwere — [Janus Compliance](https://www.januscompliance.co.uk). Part of the [Compliance Engineering Toolkit](https://github.com/janus-compliance/compliance-engineering-toolkit). Subscribe to [Compliance Engineering](https://compliance-engineering.substack.com) for new patterns and updates. CC BY 4.0 — attribution required when reused.*
+*Template by Michael K. Onyekwere — [Janus Compliance](https://www.januscompliance.co.uk). Part of the [Compliance Engineering Toolkit](https://github.com/janus-compliance/compliance-engineering-toolkit). Subscribe to [Compliance Engineering](https://complianceengineering.substack.com) for new patterns and updates. CC BY 4.0 — attribution required when reused.*
