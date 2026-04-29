@@ -47,7 +47,7 @@ Vendor evaluation frameworks:
 
 You can use, adapt, and redistribute these templates, including commercially, provided you give attribution. The required attribution is:
 
-> Adapted from the Compliance Engineering Toolkit by Michael K. Onyekwere (Janus Compliance). https://github.com/janus-compliance/compliance-engineering-toolkit
+> Adapted from the Compliance Engineering Toolkit by Michael K. Onyekwere (Janus Compliance). https://github.com/Thezenmonster/compliance-engineering-toolkit
 
 If you find this useful, the best thanks is to subscribe to [Compliance Engineering](https://complianceengineering.substack.com), the weekly newsletter where I publish new patterns and update existing ones.
 
