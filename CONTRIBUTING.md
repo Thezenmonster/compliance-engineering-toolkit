@@ -45,4 +45,4 @@ Contributors will be credited in the relevant template's footer. Consistent cont
 For questions about the toolkit itself, open an issue.
 For questions about applying templates to your specific system, that's [paid consulting](https://www.januscompliance.co.uk/contact?intent=scoping-review&source=toolkit-contributing).
 
-— Michael K. Onyekwere
+Michael K. Onyekwere

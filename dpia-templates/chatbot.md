@@ -1,6 +1,6 @@
 # DPIA Template: Customer-Facing AI Chatbot
 
-A Data Protection Impact Assessment structure for AI chatbots — customer-facing systems using LLM APIs (OpenAI, Anthropic, Google) to handle support, sales, or information queries.
+A Data Protection Impact Assessment structure for AI chatbots: customer-facing systems using LLM APIs (OpenAI, Anthropic, Google) to handle support, sales, or information queries.
 
 ## How to use
 
@@ -13,7 +13,7 @@ Fill in each section for your actual deployed chatbot. Replace bracketed placeho
 **Chatbot name and purpose:** [What does it do? Who interacts with it?]
 **Operator:** [Your organisation as data controller]
 **Deployment surface:** [Website widget / WhatsApp / mobile app / multiple]
-**LLM provider:** [OpenAI GPT-4 / Anthropic Claude / etc — specific model]
+**LLM provider:** [OpenAI GPT-4, Anthropic Claude, etc. Specific model.]
 **Knowledge sources:** [What documents or data the bot draws answers from]
 
 ## 2. Roles and Lawful Basis
@@ -35,7 +35,7 @@ Fill in each section for your actual deployed chatbot. Replace bracketed placeho
 ## 3. Personal Data Inventory
 
 **Direct user inputs:**
-- Conversation text (free-form — may contain anything users type)
+- Conversation text (free-form, may contain anything users type)
 - User identifier (session ID, account ID if logged in)
 - IP address, user agent
 - WhatsApp/phone number if applicable
@@ -46,7 +46,7 @@ Fill in each section for your actual deployed chatbot. Replace bracketed placeho
 - Conversation history (last N turns)
 
 **Data NOT sent to LLM:**
-- Full customer record / database fields not needed for response
+- Full customer record or database fields not needed for response
 - Payment information
 - Identity documents
 
@@ -106,9 +106,9 @@ User → Web/WhatsApp interface → Your server (chatbot orchestrator)
 
 ## 6. Controls and Mitigations
 
-**Pre-prompt PII filtering:** [Specific approach — regex patterns, named entity recognition, allowlist of fields permitted in context]
+**Pre-prompt PII filtering:** [Specific approach: regex patterns, named entity recognition, allowlist of fields permitted in context]
 
-**System prompt restrictions:** [Examples of what the bot is told NOT to do — share other users' data, make legal claims, etc.]
+**System prompt restrictions:** [Examples of what the bot is told NOT to do, e.g. share other users' data, make legal claims.]
 
 **Conversation storage:** [Database, encryption, access controls, retention rule]
 
@@ -148,4 +148,4 @@ User → Web/WhatsApp interface → Your server (chatbot orchestrator)
 
 ---
 
-*Template by Michael K. Onyekwere — [Janus Compliance](https://www.januscompliance.co.uk). Part of the [Compliance Engineering Toolkit](https://github.com/janus-compliance/compliance-engineering-toolkit). Subscribe to [Compliance Engineering](https://complianceengineering.substack.com) for new patterns and updates. CC BY 4.0 — attribution required when reused.*
+*Template by Michael K. Onyekwere, [Janus Compliance](https://www.januscompliance.co.uk). Part of the [Compliance Engineering Toolkit](https://github.com/janus-compliance/compliance-engineering-toolkit). Subscribe to [Compliance Engineering](https://complianceengineering.substack.com) for new patterns and updates. CC BY 4.0. Attribution required when reused.*

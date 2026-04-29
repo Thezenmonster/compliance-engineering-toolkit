@@ -1,6 +1,6 @@
 # DPIA Template: Autonomous AI Agent
 
-A Data Protection Impact Assessment structure for AI agents — autonomous systems that use tools, call APIs, and make decisions across multiple systems.
+A Data Protection Impact Assessment structure for AI agents: autonomous systems that use tools, call APIs, and make decisions across multiple systems.
 
 This template covers what generic DPIA templates miss for agents: tool use, decision boundaries, memory, escalation triggers, and the multi-processor data flow that agents create.
 
@@ -18,7 +18,7 @@ Fill in each section for the actual system you're deploying. Replace bracketed p
 
 **Deployment context:** [Customer-facing? Internal? Public-facing API? Embedded in a product?]
 
-**Autonomy level:** [Choose: human-approved actions only / human-in-the-loop on high-stakes / fully autonomous within defined boundaries]
+**Autonomy level:** [Choose one. Human-approved actions only. Human-in-the-loop on high-stakes. Fully autonomous within defined boundaries.]
 
 **Decision authority:** [What can the agent decide and execute on its own? What requires human approval?]
 
@@ -26,7 +26,7 @@ Fill in each section for the actual system you're deploying. Replace bracketed p
 
 **Controller:** [Your organisation]
 **Processors:**
-- LLM provider: [OpenAI / Anthropic / Google / other — and the specific model]
+- LLM provider: [OpenAI, Anthropic, Google, or other. Name the specific model.]
 - Tool API providers: [List every external service the agent calls]
 - Hosting / infrastructure: [Cloud provider, region]
 - Vector database / memory store: [Provider and location]
@@ -36,7 +36,7 @@ Fill in each section for the actual system you're deploying. Replace bracketed p
 - Core service delivery: [contract / legitimate interest]
 - Agent decision-making affecting individuals: [if Article 22 applies, document explicit consent or other lawful basis]
 - Memory storage: [legitimate interest with retention rationale]
-- Logging for audit/safety: [legitimate interest — operational necessity]
+- Logging for audit/safety: [legitimate interest, operational necessity]
 
 **Special category data (Article 9):** [Does the agent process or generate health data, biometric data, criminal data, or other Article 9 categories? If so, identify the Article 9(2) condition relied on.]
 
@@ -45,11 +45,11 @@ Fill in each section for the actual system you're deploying. Replace bracketed p
 For an agent, this needs to cover *direct inputs*, *generated outputs*, *intermediate state*, and *tool-call data*.
 
 **Direct user inputs:** [What does the user say to the agent?]
-**Generated outputs:** [What does the agent produce — text, decisions, structured records?]
+**Generated outputs:** [What does the agent produce: text, decisions, structured records?]
 **Tool-call inputs:** [What personal data flows into each tool the agent uses?]
 **Tool-call outputs:** [What personal data flows back from each tool?]
 **Memory / state:** [What is persisted between sessions? Vector embeddings, conversation history, user profiles, derived attributes?]
-**Logs and traces:** [What is captured for audit — full prompts? Tool call payloads? Decision rationales?]
+**Logs and traces:** [What is captured for audit: full prompts? Tool call payloads? Decision rationales?]
 **Retention period for each:** [Specific number of days. Justify why longer retention is needed if it is.]
 
 ## 4. Data Flow and Transfer Map
@@ -80,7 +80,7 @@ Risks specific to agents that generic DPIAs miss:
 
 **5.1 Decision-making errors at scale**
 - Likelihood: [low/medium/high]
-- Severity: [low/medium/high — depends on whether decisions affect individual rights, finances, access to services]
+- Severity: [low/medium/high. Depends on whether decisions affect individual rights, finances, access to services.]
 - Specific risk: agent makes wrong decision and propagates the error across multiple actions before a human notices
 
 **5.2 Tool use exposing data to unintended processors**
@@ -109,7 +109,7 @@ Risks specific to agents that generic DPIAs miss:
 
 ## 6. Controls and Mitigations
 
-For each risk above, document the specific controls in place. Don't list generic controls — name the specific configuration.
+For each risk above, document the specific controls in place. Don't list generic controls. Name the specific configuration.
 
 Examples (replace with yours):
 
@@ -165,12 +165,12 @@ After controls applied:
 
 ## What this template doesn't cover
 
-- Sectoral regulations (financial services, healthcare, recruitment) — those layer on top of GDPR/AI Act
-- Anti-discrimination obligations for agents making decisions about individuals — needs separate equality assessment
-- Liability allocation between operator and tool providers — contract layer, not DPIA layer
+- Sectoral regulations (financial services, healthcare, recruitment). Those layer on top of GDPR/AI Act.
+- Anti-discrimination obligations for agents making decisions about individuals. Needs separate equality assessment.
+- Liability allocation between operator and tool providers. Contract layer, not DPIA layer.
 
 For agent systems with complex sectoral exposure, this template is a starting point not a complete answer. Get a real review.
 
 ---
 
-*Template by Michael K. Onyekwere — [Janus Compliance](https://www.januscompliance.co.uk). Part of the [Compliance Engineering Toolkit](https://github.com/janus-compliance/compliance-engineering-toolkit). Subscribe to [Compliance Engineering](https://complianceengineering.substack.com) for new patterns and updates. CC BY 4.0 — attribution required when reused.*
+*Template by Michael K. Onyekwere, [Janus Compliance](https://www.januscompliance.co.uk). Part of the [Compliance Engineering Toolkit](https://github.com/janus-compliance/compliance-engineering-toolkit). Subscribe to [Compliance Engineering](https://complianceengineering.substack.com) for new patterns and updates. CC BY 4.0. Attribution required when reused.*
