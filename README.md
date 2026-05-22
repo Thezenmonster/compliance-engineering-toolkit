@@ -19,6 +19,10 @@ Data Protection Impact Assessment templates for common AI patterns:
 - `agent.md`: autonomous AI agents using tools (MCP, function calling)
 - `document-processor.md`: automated document processing and extraction *(coming)*
 
+### `checklists/`
+Practitioner setup checklists for high-traffic AI compliance scenarios:
+- `ai-api-compliance-checklist.md`: OpenAI / Anthropic DPA setup, zero-retention configuration, retention and logging controls, and the documentation pack a procurement or DPIA reviewer will accept. Worked example included.
+
 ### `breach-response/`
 Breach response templates and notification frameworks:
 - `nigeria-ndpa-breach-response.md`: Nigeria Data Protection Act 2023 (Section 40) breach response, notification templates, and process patterns
