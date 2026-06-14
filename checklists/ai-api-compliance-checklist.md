@@ -2,7 +2,7 @@
 
 **OpenAI / Anthropic DPA Setup, Zero-Retention Configuration, and Documentation Pack for GDPR Reviews**
 
-*Version 1.0 — May 2026*
+*Version 1.1 — June 2026*
 
 *By Michael K. Onyekwere · CIPP/E · Common Law Qualified Lawyer (LLB, LLM) · januscompliance.co.uk*
 
@@ -134,13 +134,15 @@ The controller selects the lawful basis under Article 6. For most product featur
 - [ ] Consent capture flow documented if Article 6(1)(a) is the basis
 - [ ] Special category data exclusion confirmed (Article 9) — if special category data is in scope, separate Article 9 condition required
 
-### 3.4 Article 22 — automated decision-making
+### 3.4 Automated decision-making (Article 22 / UK Articles 22A-22D)
 
-If the AI output affects the data subject's legal status or has similarly significant effects (credit, employment, insurance, denial of service), Article 22 protections apply.
+If the AI output affects the data subject's legal status or has similarly significant effects (credit, employment, insurance, denial of service), the automated-decision rules apply. Under the EU GDPR this is Article 22. Under the UK GDPR, the Data (Use and Access) Act 2025 replaced Article 22 with Articles 22A to 22D from 5 February 2026, moving from a near-prohibition to a safeguards regime: a significant solely-automated decision is permitted provided the data subject receives information about it, can make representations, can obtain human intervention, and can contest it. The permissive UK position does not extend to special category data without a separate condition.
 
-- [ ] Article 22 applicability assessed
-- [ ] Human-in-the-loop documented where Article 22 applies
+- [ ] Applicability assessed (EU Article 22 and/or UK Articles 22A-22D)
+- [ ] For UK solely-automated significant decisions: the four safeguards in place (information, representations, human intervention, contest)
+- [ ] Human-in-the-loop documented where it applies
 - [ ] Right to obtain human intervention surfaced in the user-facing notice
+- [ ] Special category data handled under the stricter pre-2026 conditions
 
 ---
 
@@ -203,7 +205,7 @@ A procurement reviewer or DPIA panel will typically ask for the following. Have 
 - The summary written to the CRM is the only persisted output of the API call
 - User-facing notice updated to state that AI is used in support workflow
 
-**Article 22 assessment:** the summary is used by a human agent for record-keeping, not for automated decisioning about the customer. Article 22 does not apply.
+**Automated-decision assessment:** the summary is used by a human agent for record-keeping, not for automated decisioning about the customer. The UK Articles 22A-22D (and EU Article 22) do not apply.
 
 **DPIA:** not formally required (low risk profile) but a lightweight risk assessment is documented and signed off by the DPO.
 
@@ -233,4 +235,4 @@ For the Compliance Engineering newsletter — weekly practitioner-grade AI compl
 
 ---
 
-*Michael K. Onyekwere · Janus Compliance · May 2026*
+*Michael K. Onyekwere · Janus Compliance · June 2026*
