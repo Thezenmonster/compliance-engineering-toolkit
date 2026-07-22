@@ -2,7 +2,7 @@
 
 **OpenAI / Anthropic DPA Setup, Zero-Retention Configuration, and Documentation Pack for GDPR Reviews**
 
-*Version 1.1 — June 2026*
+*Version 1.2: July 2026*
 
 *By Michael K. Onyekwere · CIPP/E · Common Law Qualified Lawyer (LLB, LLM) · januscompliance.co.uk*
 
@@ -26,7 +26,7 @@ The worked example at the end shows what a completed setup looks like for a hypo
 
 ---
 
-## Part 1 — DPA scoping and execution
+## Part 1: DPA scoping and execution
 
 ### 1.1 Identify the legal entity acting as controller
 
@@ -66,7 +66,7 @@ Both OpenAI and Anthropic publish sub-processor lists that change. The DPA oblig
 
 ---
 
-## Part 2 — Zero-retention and data residency configuration
+## Part 2: Zero-retention and data residency configuration
 
 ### 2.1 OpenAI zero-retention enablement
 
@@ -105,7 +105,7 @@ Both providers expose region selection that affects where inference happens. Cho
 
 ---
 
-## Part 3 — Operational controls
+## Part 3: Operational controls
 
 ### 3.1 Logging discipline
 
@@ -132,7 +132,7 @@ The controller selects the lawful basis under Article 6. For most product featur
 - [ ] Lawful basis selected per processing purpose
 - [ ] Legitimate Interest Assessment (LIA) on file if Article 6(1)(f) is the basis
 - [ ] Consent capture flow documented if Article 6(1)(a) is the basis
-- [ ] Special category data exclusion confirmed (Article 9) — if special category data is in scope, separate Article 9 condition required
+- [ ] Special category data exclusion confirmed (Article 9): if special category data is in scope, separate Article 9 condition required
 
 ### 3.4 Automated decision-making (Article 22 / UK Articles 22A-22D)
 
@@ -146,7 +146,7 @@ If the AI output affects the data subject's legal status or has similarly signif
 
 ---
 
-## Part 4 — Documentation pack for procurement / DPIA review
+## Part 4: Documentation pack for procurement / DPIA review
 
 A procurement reviewer or DPIA panel will typically ask for the following. Have them ready before you submit for review.
 
@@ -176,10 +176,47 @@ A procurement reviewer or DPIA panel will typically ask for the following. Have 
 
 ### 4.4 Transfer documentation
 
-- [ ] Standard Contractual Clauses (Module Two: controller to processor) — where the processor is outside the UK / EEA
+- [ ] Standard Contractual Clauses (Module Two: controller to processor): where the processor is outside the UK / EEA
 - [ ] UK International Data Transfer Agreement or Addendum where required
 - [ ] Transfer Impact Assessment (TIA)
 - [ ] Documented onward transfers (sub-processors and their locations)
+
+---
+
+## Part 5: EU AI Act Article 50 transparency duties (from 2 August 2026)
+
+If the API powers a customer-facing chatbot or generates content, the EU AI Act's transparency duties apply from 2 August 2026 alongside GDPR, wherever the output reaches people in the EU. Which duties are yours depends on your role for each system: the provider develops it, or has it developed, and offers it under its own name; the deployer uses it in a professional context. Customising or white-labelling a vendor tool under your own brand can move you into provider duties. The free Article 50 Duty Mapper at `januscompliance.co.uk/tools/article-50-duty-mapper` maps role, duties, and dates per system in a few questions.
+
+### 5.1 Role classification
+
+- [ ] Each AI surface classified as provider or deployer, with the reasoning recorded
+- [ ] White-labelling and substantial-modification risk checked (either can shift you into provider duties)
+- [ ] EU reach confirmed (users, customers, or audiences in the EU; the Act reaches non-EU businesses the same extraterritorial way GDPR does)
+
+### 5.2 Chatbot disclosure (Article 50(1), a provider duty)
+
+- [ ] System designed so people are told they are interacting with AI, at the latest at first interaction
+- [ ] The "obvious to a reasonably well-informed, observant and circumspect person" exemption not relied on without documented reasoning
+- [ ] Deployers of vendor chatbots: disclosure verified in your own deployment, and the provider's Article 50 position obtained in writing
+
+### 5.3 Machine-readable marking of generated output (Article 50(2), a provider duty)
+
+- [ ] Outputs marked in a machine-readable format and detectable as artificially generated, so far as technically feasible
+- [ ] Systems on the market before 2 August 2026: marking compliant by 2 December 2026 (the Omnibus grace covers the marking duty only; no other Article 50 duty is deferred)
+- [ ] Systems placed on the market from 2 August 2026: marking from day one
+
+### 5.4 Content labelling (Article 50(4), deployer duties)
+
+- [ ] Deepfakes (realistic AI image, audio, or video of people, places, or events) labelled as artificially generated or manipulated
+- [ ] AI-generated text published to inform the public on matters of public interest labelled, unless it has undergone human review and a person holds editorial responsibility for publication
+- [ ] The EU labelling icons (published June 2026) treated as optional presentation only: using an icon does not by itself discharge the duty
+
+### 5.5 Emotion recognition red line
+
+- [ ] No emotion recognition pointed at your own staff or students: prohibited since 2 February 2025 under Article 5(1)(f), and the Commission's guidelines read "workplace" broadly enough to cover recruitment, so candidates count
+- [ ] Emotion recognition on customers (call-centre sentiment tools and similar): a disclosure duty under Article 50(3) rather than a prohibition, assessed before deployment
+
+Penalties: transparency breaches carry fines up to EUR 15M or 3% of worldwide turnover; prohibited practices up to EUR 35M or 7%. Status: the Digital Omnibus amending the wider AI Act timeline was adopted in June 2026 (Parliament 16 June, Council 29 June) and signed on 8 July 2026.
 
 ---
 
@@ -220,8 +257,18 @@ The above pack passes a typical financial services procurement review without fo
 - Fine-tuning, batch inference, or assistants API usage (separate compliance considerations apply)
 - Internal LLM deployments (self-hosted models have different controls)
 - Image, audio, or video API endpoints (sectoral rules may apply)
-- High-risk AI Act applicability (Annex III): if your use case is high-risk, a fuller AI Act conformity assessment is required
-- The detailed Records of Processing Activities (RoPA) entry — see the separate RoPA template in the Compliance Engineering Toolkit
+- High-risk AI Act applicability: if your use case is high-risk, a fuller conformity assessment is required (standalone Annex III obligations apply from 2 December 2027 under the adopted Digital Omnibus; high-risk AI embedded in regulated products from 2 August 2028)
+- The detailed Records of Processing Activities (RoPA) entry: see the separate RoPA template in the Compliance Engineering Toolkit
+
+---
+
+## More from Janus Compliance
+
+**The Article 50 Duty Mapper (free).** Answer a few questions about your AI surfaces and get your duty map: your role, your duties, your dates, including the 2 December 2026 marking grace. `januscompliance.co.uk/tools/article-50-duty-mapper`
+
+**The Compliance Engineering newsletter.** Practitioner-grade analysis of AI regulation, verified against primary sources before it reaches you. `complianceengineering.substack.com`
+
+**The Article 50 readiness teardown.** A fixed-fee (GBP 200) written review of your actual AI surfaces against each Article 50 duty: your role per system, the exemptions you can rely on, and what to fix first, delivered within five working days. `januscompliance.co.uk/services/eu-ai-act-compliance`
 
 ---
 
@@ -229,10 +276,10 @@ The above pack passes a typical financial services procurement review without fo
 
 This checklist is part of the Compliance Engineering Toolkit at `github.com/Thezenmonster/compliance-engineering-toolkit`. The toolkit is licensed CC BY 4.0 and may be reused with attribution.
 
-For consulting on AI compliance for your specific system, see `januscompliance.co.uk/services` or write to `michael@januscompliance.co.uk`.
+For consulting on AI compliance for your specific system, see `januscompliance.co.uk/services` or write to `michaelo@januscompliance.co.uk`.
 
-For the Compliance Engineering newsletter — weekly practitioner-grade AI compliance writing — see `januscompliance.co.uk/newsletter`.
+For the Compliance Engineering newsletter: practitioner-grade AI regulation writing: see `januscompliance.co.uk/newsletter`.
 
 ---
 
-*Michael K. Onyekwere · Janus Compliance · June 2026*
+*Michael K. Onyekwere · Janus Compliance · July 2026*
