@@ -2,7 +2,7 @@
 
 **OpenAI / Anthropic DPA Setup, Zero-Retention Configuration, and Documentation Pack for GDPR Reviews**
 
-*Version 1.2: July 2026*
+*Version 1.3: August 2026*
 
 *By Michael K. Onyekwere · CIPP/E · Common Law Qualified Lawyer (LLB, LLM) · januscompliance.co.uk*
 
@@ -48,7 +48,7 @@ OpenAI's DPA is a click-through agreement available through the OpenAI platform 
 
 ### 1.3 Sign the Anthropic Commercial Terms and DPA
 
-Anthropic's terms are at `console.anthropic.com/legal/commercial-terms`. The DPA is incorporated by reference. The Anthropic console requires an authorised signatory to accept the terms before API keys are issued under the controller account.
+Anthropic's terms are at `anthropic.com/legal/commercial-terms`. The DPA is incorporated by reference. The Anthropic console requires an authorised signatory to accept the terms before API keys are issued under the controller account.
 
 - [ ] Anthropic account created under the correct controller legal name
 - [ ] Commercial Terms accepted by an authorised signatory
@@ -60,7 +60,7 @@ Anthropic's terms are at `console.anthropic.com/legal/commercial-terms`. The DPA
 Both OpenAI and Anthropic publish sub-processor lists that change. The DPA obliges you to monitor for changes and surface material changes to the controller's compliance function.
 
 - [ ] OpenAI sub-processor list URL added to register: `openai.com/policies/sub-processor-list`
-- [ ] Anthropic sub-processor list URL added to register: `anthropic.com/legal/subprocessors`
+- [ ] Anthropic sub-processor list URL added to register: `anthropic.com/subprocessors` (redirects to the Trust Center)
 - [ ] Quarterly review cadence scheduled (recommend the first Monday of each quarter)
 - [ ] Process for escalating new sub-processors to the DPO documented
 
@@ -183,9 +183,9 @@ A procurement reviewer or DPIA panel will typically ask for the following. Have 
 
 ---
 
-## Part 5: EU AI Act Article 50 transparency duties (from 2 August 2026)
+## Part 5: EU AI Act Article 50 transparency duties (applying since 2 August 2026)
 
-If the API powers a customer-facing chatbot or generates content, the EU AI Act's transparency duties apply from 2 August 2026 alongside GDPR, wherever the output reaches people in the EU. Which duties are yours depends on your role for each system: the provider develops it, or has it developed, and offers it under its own name; the deployer uses it in a professional context. Customising or white-labelling a vendor tool under your own brand can move you into provider duties. The free Article 50 Duty Mapper at `januscompliance.co.uk/tools/article-50-duty-mapper` maps role, duties, and dates per system in a few questions.
+If the API powers a customer-facing chatbot or generates content, the EU AI Act's transparency duties have applied since 2 August 2026 alongside GDPR, wherever Article 2's scope rules reach your system or its output. Which duties are yours depends on your role for each system: the provider develops it, or has it developed, and places it on the market or puts it into service under its own name or trademark; the deployer uses it in a professional context. Branding a vendor's tool alone does not make you the provider, though having a system developed for you and running it under your own name does. The free Article 50 Duty Mapper at `januscompliance.co.uk/tools/article-50-duty-mapper` maps role, duties, and dates per system in a few questions.
 
 ### 5.1 Role classification
 
@@ -268,7 +268,7 @@ The above pack passes a typical financial services procurement review without fo
 
 **The Compliance Engineering newsletter.** Practitioner-grade analysis of AI regulation, verified against primary sources before it reaches you. `complianceengineering.substack.com`
 
-**The Article 50 readiness teardown.** A fixed-fee (GBP 200) written review of your actual AI surfaces against each Article 50 duty: your role per system, the exemptions you can rely on, and what to fix first, delivered within five working days. `januscompliance.co.uk/services/eu-ai-act-compliance`
+**The Article 50 compliance check.** A fixed-fee (GBP 250) written review of your actual AI surfaces against each Article 50 duty: your role per system, the exemptions you can rely on, and what to fix first, delivered within 72 hours. `januscompliance.co.uk/services/eu-ai-act-compliance`
 
 ---
 
@@ -282,4 +282,4 @@ For the Compliance Engineering newsletter: practitioner-grade AI regulation writ
 
 ---
 
-*Michael K. Onyekwere · Janus Compliance · July 2026*
+*Michael K. Onyekwere · Janus Compliance · August 2026*
