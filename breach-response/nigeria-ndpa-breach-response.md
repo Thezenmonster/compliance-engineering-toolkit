@@ -1,153 +1,144 @@
 # Breach Response Template: Nigeria (NDPA 2023)
 
-A response framework for personal data breaches under the Nigeria Data Protection Act 2023, Section 40. Built for fintechs, SaaS companies, and any controller processing Nigerian residents' personal data.
-
-This isn't legal advice. It's the structure I use when delivering breach response work for clients. Adapt it to your specific business.
+A framework for responding to personal data breaches under section 40 of the Nigeria Data Protection Act 2023, for fintechs, software companies and any other controller processing the personal data of people in Nigeria. It is a starting point rather than legal advice, and it should be adapted to your organisation and checked against any directives the Nigeria Data Protection Commission (NDPC) has issued since the date below.
 
 ## How to use
 
-Build this into your incident response process before you need it. Print it. Pin it. The 72-hour clock under NDPA Section 40(2) does not wait for you to figure out what to do.
+Build this into your incident response process before a breach occurs, because the 72-hour period under section 40(2) leaves little time to design a process once one has started.
 
 ---
 
-## The trigger: when the clock starts
+## When the 72-hour period starts
 
-The NDPA Section 40(2) clock starts when a controller becomes **aware** of a breach likely to result in a risk to the rights and freedoms of individuals.
+Under section 40(2), a controller must notify the NDPC within 72 hours of becoming aware of a breach that is likely to result in a risk to the rights and freedoms of individuals. Because the period runs from awareness rather than from the breach itself, record when each person first learned of the breach, and in what form.
 
-"Aware" is not "happened." Document the moment of awareness: who knew first, when, in what form.
-
-If a processor (e.g. CRM vendor, hosting provider) discovered the breach first, Section 40(1) obliges them to notify you. Your clock starts when their notification reaches someone with authority to act, not when they hit send.
+Where a processor, such as a hosting or CRM provider, discovers a breach first, section 40(1) requires it, on becoming aware of the breach, to notify the controller that engaged it, describing the breach and, where possible, the categories and approximate numbers of data subjects and records affected, and to respond to the controller's requests for information. Record the time the processor's notification was received and who received it, since that is likely to be treated as the point at which the controller became aware.
 
 ---
 
-## Phase 1: First 4 hours, containment and scope
+## Phase 1: containment and scope (first hours)
 
 | Action | Owner | Status |
 |--------|-------|--------|
-| Confirm the incident is a personal data breach (not just a security incident) | DPO + Security Lead | |
-| Contain the breach. Stop further data exposure. | Security Lead | |
-| Identify what personal data is affected (categories) | DPO | |
-| Identify approximately how many data subjects affected | DPO | |
-| Identify whether special category data is involved (health, biometric, children) | DPO | |
-| Open the incident log: timestamped record of every action | DPO | |
-| Notify your DPO formally if not already aware | Whoever discovered | |
+| Confirm whether the incident is a personal data breach rather than a security incident only | DPO and security lead | |
+| Contain the breach and stop further exposure | Security lead | |
+| Identify the categories of personal data affected | DPO | |
+| Estimate how many data subjects and records are affected | DPO | |
+| Identify whether sensitive personal data or children's data is involved | DPO | |
+| Open an incident log recording every action with a timestamp | DPO | |
+| Notify the DPO formally if they are not already aware | Whoever discovered the breach | |
 
-Containment first. Notification second. The NDPC will look at containment evidence in any subsequent investigation.
+Containment comes first, and the record of what was done and when will be important evidence if the NDPC later investigates.
 
 ---
 
-## Phase 2: Hours 4-24, assessment
+## Phase 2: assessment
 
 | Action | Owner | Status |
 |--------|-------|--------|
-| Assess whether the breach is "likely to result in a risk to the rights and freedoms of individuals" (the Section 40(2) threshold) | DPO | |
-| If yes: NDPC notification is required | DPO | |
-| Assess whether the breach is "likely to result in a high risk" (the Section 40(3) threshold) | DPO | |
-| If yes: data subject notification is also required | DPO | |
-| Identify all affected processors and sub-processors | DPO | |
-| Document the cross-border transfer position (if data left Nigeria) | DPO | |
-| Begin drafting NDPC notification using the template below | DPO | |
-| Begin drafting data subject notification (if applicable) | DPO + Communications | |
+| Assess whether the breach is likely to result in a risk to individuals' rights and freedoms (the section 40(2) test) | DPO | |
+| If so, prepare to notify the NDPC | DPO | |
+| Assess whether the breach is likely to result in a high risk (the section 40(3) test) | DPO | |
+| If so, prepare to notify the affected data subjects as well | DPO | |
+| Identify all processors and sub-processors involved | DPO | |
+| Record the cross-border transfer position if the data left Nigeria | DPO | |
+| Begin drafting the NDPC notification using the template below | DPO | |
+| Begin drafting the data subject notification, if required | DPO and communications | |
+
+In assessing risk, section 40(7) allows the controller to take into account the effectiveness of technical and organisational measures already in place, such as encryption or de-identification, any later measures that reduce the risk, and the nature, scope and sensitivity of the data.
 
 ---
 
-## Phase 3: Hours 24-72, notification
+## Phase 3: notification (within 72 hours of awareness)
 
-### NDPC notification (Section 40(2)). Required within 72 hours of awareness.
+### Notifying the NDPC (section 40(2))
 
-The notification must include:
+The controller must notify the NDPC within 72 hours of becoming aware of the breach and, where feasible, describe the nature of the breach, including the categories and approximate numbers of data subjects and records concerned. Under section 40(4), the notification must also give the name and contact details of a point of contact from whom more information can be obtained, describe the likely consequences of the breach, and describe the measures taken or proposed to address it, including measures to mitigate its possible adverse effects.
 
-- **Nature of the personal data breach.** What happened, plainly.
-- **Categories of data subjects affected.** Customers, employees, beneficiaries, etc.
-- **Approximate number of data subjects affected.**
-- **Categories of personal data records affected.** Names, contact details, financial, health, identity documents.
-- **Approximate number of personal data records affected** (different from data subjects, since one subject can have many records).
-- **Likely consequences of the breach.** Identity theft, financial fraud, reputational harm.
-- **Measures taken or proposed to address the breach.** Containment, mitigation, prevention going forward.
-- **Contact details of the DPO** or person handling response.
+In practice, the notification should cover:
 
-If you cannot provide all of the above within 72 hours, send what you have and update the NDPC as you learn more. NDPA Section 40(2) does not penalise partial reporting; it penalises silence.
+- the nature of the breach, described plainly;
+- the categories and approximate number of data subjects affected;
+- the categories and approximate number of records affected, which can differ from the number of data subjects;
+- the likely consequences, such as identity theft, financial fraud or reputational harm;
+- the measures taken or proposed, covering containment, mitigation and prevention;
+- the contact details of the DPO or other point of contact.
 
-**Filing channel.** Email to the NDPC at the address listed on [ndpc.gov.ng](https://ndpc.gov.ng) plus, where applicable, any portal the NDPC has activated. Confirm the receiving address is current at time of filing. NDPC channels evolve.
+Where it is not possible to provide all of this information at the same time, section 40(9) allows it to be provided in phases without undue delay, so an initial notification should not be delayed while the investigation continues.
 
-### Data subject notification (Section 40(3)). Required if high risk.
+**How to file.** Use the channel the NDPC currently specifies on [ndpc.gov.ng](https://ndpc.gov.ng), whether by email or through an online portal, and confirm it is current at the time of filing.
 
-Required when the breach is likely to result in a **high risk** to the rights and freedoms of data subjects. Must include:
+### Notifying data subjects (section 40(3))
 
-- A description of the nature of the breach
-- The DPO's contact details
-- The likely consequences
-- The measures being taken in response
-
-The notification must be communicated to data subjects "immediately." Direct, written-tone, in plain language. Avoid corporate hedging. The NDPC has been explicit that data subject communication should serve the subject, not the controller's brand.
+Where a breach is likely to result in a high risk to the rights and freedoms of data subjects, the controller must communicate the breach to them immediately, in plain and clear language, including advice on the measures they could take to mitigate its possible adverse effects. Where direct communication would involve disproportionate effort, or is otherwise not feasible, the controller may instead make a public communication through widely used media that the data subjects are likely to see. The communication must also include the information required by section 40(4) set out above.
 
 ---
 
 ## Notification template: NDPC
 
-A pre-drafted email body. Replace bracketed placeholders. Send from your DPO's address with cc to your senior compliance contact.
+An email body to adapt. Replace the bracketed placeholders, and send it from the DPO's address with a copy to your senior compliance contact.
 
 ```
-Subject: NDPA Section 40(2) Breach Notification, [Your Organisation Name]
+Subject: Personal data breach notification under section 40(2) of the NDPA 2023, [Organisation name]
 
-To: The Commissioner, Nigeria Data Protection Commission
+To: The National Commissioner, Nigeria Data Protection Commission
 
-Dear Commissioner,
+Dear National Commissioner,
 
-Pursuant to Section 40(2) of the Nigeria Data Protection Act 2023,
-[Your Organisation Name] hereby notifies the Commission of a
-personal data breach.
+Pursuant to section 40(2) of the Nigeria Data Protection Act 2023,
+[Organisation name] notifies the Commission of a personal data breach.
 
 1. ORGANISATION
    Name: [Full registered name]
    Registered address: [Address]
-   DPO contact: [DPO name, email, phone]
+   Point of contact: [DPO name, email, phone]
 
-2. AWARENESS TIMESTAMP
-   The breach came to our attention on [date and time].
-   This notification is being submitted within 72 hours of awareness.
+2. AWARENESS
+   We became aware of the breach on [date and time].
+   This notification is submitted within 72 hours of that time.
 
 3. NATURE OF THE BREACH
-   [Plain language description: what happened, when it happened,
-   how it was discovered.]
+   [Plain description of what happened, when it happened and how it
+   was discovered.]
 
 4. PERSONAL DATA AFFECTED
-   Categories of data: [name, email, phone, ID number, financial data,
-   health data, etc.]
+   Categories of data: [for example name, email, phone, ID number,
+   financial data, health data]
    Approximate number of data subjects: [number]
    Approximate number of records: [number]
-   Special category data involved: [Yes (specify) or No]
+   Sensitive personal data involved: [Yes (specify) or No]
 
 5. LIKELY CONSEQUENCES
-   [What harm could result for affected individuals: identity theft,
-   financial fraud, discrimination risk, physical safety, etc.]
+   [The harm that could result for the individuals affected, for
+   example identity theft, financial fraud or discrimination.]
 
 6. MEASURES TAKEN OR PROPOSED
    - Containment: [steps taken to stop further exposure]
-   - Mitigation: [steps taken to reduce harm to affected individuals]
+   - Mitigation: [steps taken to reduce harm to the individuals]
    - Investigation: [scope and current status]
    - Prevention: [planned steps to prevent recurrence]
 
 7. DATA SUBJECT NOTIFICATION
-   We have assessed the breach against the Section 40(3) high-risk
-   threshold and determined that direct notification of data subjects is:
-   [Required, being communicated as of (date), OR Not required (reasoning)]
+   We have assessed the breach against the high-risk test in
+   section 40(3) and concluded that communication to data subjects is:
+   [Required, and being made as of (date), OR not required, because
+   (reasons)]
 
-8. ADDITIONAL INFORMATION
-   This notification is being submitted with the information available
-   at this time. We undertake to provide the Commission with further
-   information as the investigation proceeds.
+8. FURTHER INFORMATION
+   This notification contains the information available at this time.
+   In accordance with section 40(9), we will provide further information
+   in phases as our investigation proceeds.
 
-   Cross-border transfer position: [If data left Nigeria, describe the
-   transfer mechanism and any safeguards.]
+   Cross-border transfer position: [If data left Nigeria, the transfer
+   mechanism and safeguards.]
 
-We remain available to assist the Commission's review.
+We remain available to assist the Commission.
 
 Yours faithfully,
 
-[DPO Name]
+[DPO name]
 Data Protection Officer
-[Your Organisation Name]
+[Organisation name]
 [Email] / [Phone]
 ```
 
@@ -156,91 +147,88 @@ Data Protection Officer
 ## Notification template: data subjects (high-risk breaches)
 
 ```
-Subject: Important security update about your [Service Name] account
+Subject: Important information about the security of your [Service name] account
 
-Dear [First Name or "Customer"],
+Dear [First name or "Customer"],
 
-We are writing to let you know about a security incident affecting
-some of our customer data, including yours.
+We are writing to tell you about a security incident that has
+affected some of our customers' personal data, including yours.
 
 WHAT HAPPENED
-[2-3 sentences. Plain English. No jargon.]
+[Two or three sentences in plain language.]
 
 WHAT INFORMATION WAS INVOLVED
-[Specific list of data categories.]
+[The specific categories of data.]
 
 WHAT WE ARE DOING
-- [Containment action 1]
-- [Containment action 2]
+- [Containment step]
+- [Containment step]
 - [What we have done to protect you specifically]
 
 WHAT YOU CAN DO
-- [Specific protective action 1, e.g. change password]
-- [Specific protective action 2, e.g. monitor statements]
-- [Where to get help if you believe you've been affected]
+- [A specific protective step, for example changing your password]
+- [A specific protective step, for example checking your statements]
+- [Where to get help if you think you have been affected]
 
 WHO TO CONTACT
-For any questions, please contact our Data Protection Officer:
-[DPO Name]
+If you have any questions, please contact our Data Protection Officer:
+[DPO name]
 [Email]
 [Phone]
 
-You also have the right to contact the Nigeria Data Protection
-Commission at https://ndpc.gov.ng if you have concerns about how
-your personal data has been handled.
+You can also contact the Nigeria Data Protection Commission at
+https://ndpc.gov.ng if you have concerns about how your personal
+data has been handled.
 
-We take this seriously. We are sorry this has happened.
+We are sorry that this has happened.
 
-[Senior Authorised Person, not just DPO]
-[Your Organisation Name]
+[Name and title of a senior authorised person]
+[Organisation name]
 ```
 
 ---
 
-## What to document throughout
+## Records to keep
 
-The NDPC may investigate even after notification. The records they will look at:
+Section 40(8) requires controllers and processors to keep a record of all personal data breaches, setting out the facts, the effects and the remedial action taken, in a way that allows the NDPC to verify compliance with section 40. The record should include:
 
-- Awareness log: when each named individual learned of the breach
-- Containment evidence: technical actions taken, with timestamps
-- Decision log: every threshold decision (notifiable yes/no, high-risk yes/no), who made it, on what evidence
-- Communications log: drafts, sign-offs, sent versions, recipient confirmations
-- Internal escalation evidence that the breach was raised through proper channels in the right timeframe
-- Post-incident review: what was learned, what process changes followed
+- when each named person became aware of the breach;
+- the containment steps taken, with timestamps;
+- each threshold decision (whether the breach was notifiable, and whether it was high risk), who took it and on what evidence;
+- drafts, approvals, sent versions and confirmations of every notification;
+- how the breach was escalated internally;
+- the post-incident review and any process changes that followed.
 
-Keep these records for at least 3 years after the incident. Some sectoral regulators (CBN for fintechs) may require longer retention.
-
----
-
-## Things that go wrong in real responses
-
-These are patterns from real client work. Build your process to avoid them.
-
-**The procurement delay.** Breach is contained, DPO is ready to file, NDPC notification needs to go in 4 hours. The CEO has to sign off because that's the policy. The CEO is on a flight. Pre-authorise your DPO to file without escalation for time-bounded statutory notifications.
-
-**The investigation paralysis.** "We need certainty before we report." The NDPC explicitly accepts partial reporting under Section 40(2). File what you know, update as you learn. Waiting for certainty is how you miss the 72-hour window.
-
-**The wrong scope.** Initial assessment said 4,500 affected. Actual count grows to 40,000 over the following week. The NDPC accepts revised numbers; what they don't accept is silence after you knew the number had grown.
-
-**The processor blame game.** Your CRM provider lost the data, but you're the controller. The NDPC notifies and fines the controller, then leaves you to recover from your processor under contract. Build your DPAs (Section 27 NDPA) to make recovery actually possible.
-
-**The "we regret to inform you" data subject email.** Customers see straight through corporate hedging. The NDPC has signalled in subsequent guidance that data subject notification should be clear about impact, not soft about brand. Match the tone of a clear public service notice, not a marketing email.
+The Act does not set a retention period for these records, so retain them in line with your retention policy and any longer period required by a sector regulator, such as the Central Bank of Nigeria for financial services.
 
 ---
 
-## When to bring in external help
+## Common difficulties
 
-Self-build this template into your existing incident response. For most breaches, you can run the response in-house if you've prepared.
+**Approval when time is short.** If internal policy requires a senior executive to approve a regulatory notification, the 72-hour period can be lost while that person is unavailable. Authorising the DPO in advance to file statutory notifications within their deadline avoids this.
 
-You probably need external counsel if:
-- The breach involves cross-border transfer issues you haven't planned for
-- The breach involves children's data
-- The numbers are large (10,000+ data subjects)
-- You're already under NDPC scrutiny for unrelated reasons
-- Your sector regulator (CBN, NCC) overlaps and you need to coordinate filings
+**Waiting for certainty.** Because section 40(9) allows information to be provided in phases, waiting for the full picture before notifying is not necessary, and it puts the 72-hour deadline at risk. Notify what is known and update the NDPC as the investigation develops.
+
+**A growing scope.** The number of people affected often rises as an investigation continues, and the NDPC should be updated when it does rather than left with the original estimate.
+
+**Breaches at a processor.** Where a processor causes the breach, the controller remains responsible for notifying the NDPC under section 40(2). The written agreement with the processor, which section 29(2) requires, should require prompt notification and cooperation so that the controller can meet its own deadline.
+
+**Tone of the data subject notice.** Section 40(3) requires plain and clear language and advice on what people can do to protect themselves, so the notice should explain the impact and the protective steps directly rather than in general reassurances.
 
 ---
 
-*Template by Michael K. Onyekwere, [Janus Compliance](https://www.januscompliance.co.uk). Part of the [Compliance Engineering Toolkit](https://github.com/Thezenmonster/compliance-engineering-toolkit). Subscribe to [Compliance Engineering](https://complianceengineering.substack.com) for new patterns and updates. CC BY 4.0. Attribution required when reused.*
+## When to seek external advice
 
-*Sources: Nigeria Data Protection Act 2023, Section 40. NDPC published enforcement actions and guidance.*
+Many breaches can be handled in-house by an organisation that has prepared. External advice is advisable where:
+
+- the breach raises cross-border transfer questions you have not planned for;
+- children's data is involved;
+- a large number of people is affected;
+- the organisation is already the subject of NDPC scrutiny for another matter;
+- a sector regulator also requires notification, since its deadline may be shorter than the NDPA's. For example, the Nigerian Communications Commission's Internet Code of Practice 2026 is reported to require internet access service providers to notify it and affected consumers within 48 hours, so check the current text of any sector rules that apply to you.
+
+---
+
+*Template by Michael K. Onyekwere, [Janus Compliance](https://www.januscompliance.co.uk). Part of the [Compliance Engineering Toolkit](https://github.com/Thezenmonster/compliance-engineering-toolkit). New templates and updates are announced in [Compliance Engineering](https://complianceengineering.substack.com). Licensed CC BY 4.0; attribution required on reuse.*
+
+*Sources: Nigeria Data Protection Act 2023, sections 29(2) and 40 (official gazette text, checked 4 October 2026). The NCC Internet Code of Practice 2026 reference is from secondary reporting (Mondaq, 1 July 2026) and should be checked against the Code itself.*

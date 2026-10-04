@@ -1,176 +1,171 @@
-# DPIA Template: Autonomous AI Agent
+# DPIA Template: AI Agent
 
-A Data Protection Impact Assessment structure for AI agents: autonomous systems that use tools, call APIs, and make decisions across multiple systems.
+A data protection impact assessment structure for AI agents, meaning systems that use tools, call APIs and take actions across several systems with some degree of autonomy.
 
-This template covers what generic DPIA templates miss for agents: tool use, decision boundaries, memory, escalation triggers, and the multi-processor data flow that agents create.
+Generic DPIA templates were not designed for agents, so this one adds the areas they tend to miss: tool use, decision boundaries, memory, escalation and the chain of processors that an agent creates.
 
 ## How to use
 
-Fill in each section for the actual system you're deploying. Replace bracketed placeholders. Delete sections that don't apply (and explain why in the residual risk section). The headings are the structure regulators expect; the content under each is what makes it specific to your agent.
+Complete each section for the system you are actually deploying, replacing the bracketed placeholders. Where a section does not apply, say so and explain why in the residual risk section.
 
 ---
 
-## 1. System Summary
+## 1. System summary
 
-**Agent name and purpose:** [What does this agent do? Who uses it? What outcome does it produce?]
+**Agent name and purpose:** [What the agent does, who uses it and what it produces]
 
-**Operator:** [Your organisation as data controller]
+**Operator:** [Your organisation, as controller]
 
-**Deployment context:** [Customer-facing? Internal? Public-facing API? Embedded in a product?]
+**Deployment context:** [Customer-facing, internal, a public API, or embedded in a product]
 
-**Autonomy level:** [Choose one. Human-approved actions only. Human-in-the-loop on high-stakes. Fully autonomous within defined boundaries.]
+**Level of autonomy:** [Choose one: every action approved by a person; a person approves high-impact actions; or fully autonomous within defined boundaries]
 
-**Decision authority:** [What can the agent decide and execute on its own? What requires human approval?]
+**Decision authority:** [What the agent can decide and do by itself, and what requires approval by a person]
 
-## 2. Roles and Lawful Basis
+## 2. Roles and lawful basis
 
 **Controller:** [Your organisation]
 **Processors:**
-- LLM provider: [OpenAI, Anthropic, Google, or other. Name the specific model.]
-- Tool API providers: [List every external service the agent calls]
-- Hosting / infrastructure: [Cloud provider, region]
-- Vector database / memory store: [Provider and location]
-- Logging / observability: [Where agent traces and tool calls are stored]
+- Model provider: [Provider and the specific model]
+- Tool and API providers: [Every external service the agent calls]
+- Hosting and infrastructure: [Cloud provider and region]
+- Vector database or memory store: [Provider and location]
+- Logging and monitoring: [Where agent traces and tool calls are stored]
 
-**Lawful basis for each processing purpose:**
-- Core service delivery: [contract / legitimate interest]
-- Agent decision-making affecting individuals: [if Article 22 applies, document explicit consent or other lawful basis]
-- Memory storage: [legitimate interest with retention rationale]
-- Logging for audit/safety: [legitimate interest, operational necessity]
+**Lawful basis, for each purpose:**
+- Delivering the service: [contract or legitimate interests]
+- Decisions about individuals: [if a decision is based solely on automated processing and has legal or similarly significant effects, record the condition relied on under Article 22(2) of the EU GDPR, or the safeguards required by Articles 22A to 22D of the UK GDPR]
+- Memory storage: [legitimate interests, with the reason for the retention period]
+- Logging for audit and safety: [legitimate interests]
 
-**Special category data (Article 9):** [Does the agent process or generate health data, biometric data, criminal data, or other Article 9 categories? If so, identify the Article 9(2) condition relied on.]
+**Special category data (Article 9):** [Whether the agent processes or infers health, biometric, criminal offence or other special category data, and if so the Article 9(2) condition relied on]
 
-## 3. Personal Data Inventory
+## 3. Personal data inventory
 
-For an agent, this needs to cover *direct inputs*, *generated outputs*, *intermediate state*, and *tool-call data*.
+For an agent this needs to cover what users provide, what the agent produces, what it stores between steps and what passes to and from each tool.
 
-**Direct user inputs:** [What does the user say to the agent?]
-**Generated outputs:** [What does the agent produce: text, decisions, structured records?]
-**Tool-call inputs:** [What personal data flows into each tool the agent uses?]
-**Tool-call outputs:** [What personal data flows back from each tool?]
-**Memory / state:** [What is persisted between sessions? Vector embeddings, conversation history, user profiles, derived attributes?]
-**Logs and traces:** [What is captured for audit: full prompts? Tool call payloads? Decision rationales?]
-**Retention period for each:** [Specific number of days. Justify why longer retention is needed if it is.]
+**Data provided by users:** [What users tell the agent]
+**Outputs:** [What the agent produces: text, decisions or structured records]
+**Data sent to tools:** [What personal data goes to each tool]
+**Data returned by tools:** [What personal data comes back from each tool]
+**Memory and state:** [What persists between sessions, such as conversation history, embeddings, user profiles or inferred attributes]
+**Logs and traces:** [What is captured for audit, such as full prompts, tool call contents or decision reasons]
+**Retention for each:** [A specific period, with the reason for any longer retention]
 
-## 4. Data Flow and Transfer Map
+## 4. Data flow and transfers
 
-Visual diagram preferred. As a written sketch:
+A diagram is the clearest way to show the flow; in outline:
 
 ```
 User input
-  → Agent orchestrator (your servers)
-    → LLM provider [host/region]
-    → Tool API 1 [host/region/data sent]
-    → Tool API 2 [host/region/data sent]
-    → Memory store [host/region]
-    → Decision logic
-    → User-facing output
-    → Logging system [host/region]
+  → agent orchestration (your servers)
+    → model provider [host/region]
+    → tool API 1 [host/region/data sent]
+    → tool API 2 [host/region/data sent]
+    → memory store [host/region]
+    → decision logic
+    → output to the user
+    → logging [host/region]
 ```
 
-**Cross-border transfers:**
-- For each non-UK/EEA processor: identify the Article 46 safeguard (SCCs, BCRs, adequacy decision)
-- For US-based providers: document the EU-US Data Privacy Framework status if applicable
+**International transfers:**
+- For each processor outside the UK or EEA, identify the transfer mechanism, such as the Standard Contractual Clauses, binding corporate rules or an adequacy decision.
+- For US providers, check the EU-US Data Privacy Framework register by legal entity name rather than assuming certification.
 
-**Sub-processors:** Each tool API the agent uses is functionally a sub-processor. List them. Confirm each has a DPA.
+**Sub-processors:** each tool provider that processes personal data on your behalf is a processor or sub-processor, so list them and confirm a data processing agreement is in place with each.
 
-## 5. Risk Assessment
+## 5. Risk assessment
 
-Risks specific to agents that generic DPIAs miss:
+The following risks are specific to agents.
 
-**5.1 Decision-making errors at scale**
-- Likelihood: [low/medium/high]
-- Severity: [low/medium/high. Depends on whether decisions affect individual rights, finances, access to services.]
-- Specific risk: agent makes wrong decision and propagates the error across multiple actions before a human notices
+**5.1 Errors repeated at scale**
+- Likelihood: [low, medium or high]
+- Severity: [low, medium or high, depending on whether decisions affect people's rights, finances or access to services]
+- Risk: the agent makes a wrong decision and repeats it across several actions before anyone notices
 
-**5.2 Tool use exposing data to unintended processors**
-- The agent may call tools the original DPIA didn't anticipate (e.g., a search tool that sends queries to a third-party search engine)
-- Mitigation: tool allowlisting + per-tool DPA review
+**5.2 Tools sending data to processors that were not assessed**
+- The agent may call a tool the DPIA did not anticipate, such as a search tool that sends queries to a third-party search provider.
+- Mitigation: an allowlist of permitted tools, with a data protection review of each
 
-**5.3 Memory leakage across users**
-- If multiple users share the same vector store, embeddings of one user's data could surface in another user's context
-- Mitigation: per-user memory partitioning + retrieval boundaries
+**5.3 Memory shared across users**
+- Where several users share one vector store, information from one user's data could appear in another user's context.
+- Mitigation: memory partitioned by user, with retrieval limited to each user's own data
 
-**5.4 Unbounded data collection through tool use**
-- Agents that can browse the web or read files may pull in personal data the controller never intended to process
-- Mitigation: tool boundary controls, output filtering
+**5.4 Collecting more data than intended through tools**
+- Agents that can browse the web or read files may bring in personal data the controller never intended to process.
+- Mitigation: limits on tool access, and filtering of tool outputs
 
-**5.5 Audit trail gaps**
-- Tool calls happen in milliseconds. Logging volume is enormous. Easy to log too little (can't reconstruct decisions) or too much (creating new personal data risks)
-- Mitigation: structured logging with PII redaction + defined retention
+**5.5 Gaps in the audit trail**
+- Because tool calls are frequent and fast, logging too little makes decisions impossible to reconstruct, while logging too much creates new personal data risks.
+- Mitigation: structured logging with personal data removed or pseudonymised, and a defined retention period
 
-**5.6 Article 22 trigger without realisation**
-- Agent makes a decision affecting an individual without human review. Even one such decision triggers Article 22 obligations
-- Mitigation: explicit human-in-the-loop checkpoints for any decision with legal/significant effects
+**5.6 Automated decisions made without anyone noticing**
+- Where the agent takes a decision about a person based solely on automated processing, with legal or similarly significant effects, the automated decision-making rules apply: Article 22 of the EU GDPR, or Articles 22A to 22D of the UK GDPR.
+- Mitigation: review by a person, with real authority to change the outcome, before any decision with legal or similarly significant effects
 
-**5.7 Adversarial prompts manipulating agent behaviour**
-- Users (or content the agent reads) may attempt prompt injection to make the agent perform unauthorised actions
-- Mitigation: prompt isolation, output validation, action-level authorization
+**5.7 Prompt injection**
+- Users, or content the agent reads, may contain instructions designed to make the agent take actions it should not.
+- Mitigation: separation of instructions from untrusted content, validation of outputs, and authorisation checks for each action
 
-## 6. Controls and Mitigations
+## 6. Controls
 
-For each risk above, document the specific controls in place. Don't list generic controls. Name the specific configuration.
+For each risk, record the specific controls in place and how they are configured. The following are examples to replace with your own.
 
-Examples (replace with yours):
-
-**Tool boundary controls:**
-- Agent has access only to: [explicit allowlist]
-- New tools require [DPIA update / DPO sign-off]
-- Tool call payloads filtered to remove [unnecessary PII categories]
+**Tool controls:**
+- tools the agent can use: [explicit allowlist]
+- process for adding a tool: [DPIA update and DPO advice]
+- data removed from tool calls: [categories of personal data that are filtered]
 
 **Decision boundaries:**
-- Agent autonomously executes: [list of low-risk actions]
-- Human approval required for: [list of significant actions, with the trigger]
-- Escalation path: [who reviews, in what timeframe]
+- actions the agent takes by itself: [list of low-risk actions]
+- actions requiring approval by a person: [list of significant actions and the trigger]
+- escalation: [who reviews and how quickly]
 
 **Memory controls:**
-- Per-user partitioning: [how implemented technically]
-- Retention: [conversation history retained X days, embeddings retained Y days]
-- Deletion on data subject request: [tested process]
+- partitioning by user: [how it is implemented]
+- retention: [conversation history kept X days, embeddings Y days]
+- deletion on request: [the tested process]
 
 **Logging controls:**
-- What gets logged: [structure]
-- PII handling in logs: [redaction or pseudonymisation approach]
-- Log retention: [days]
-- Log access controls: [who can read]
+- what is logged: [structure]
+- personal data in logs: [removal or pseudonymisation approach]
+- retention: [days]
+- access: [who can read the logs]
 
 **Audit and explainability:**
-- Decision audit trail: [what information is captured per decision]
-- Human review process: [sample size, frequency]
-- Regulator-ready reporting: [what could be produced if requested]
+- information captured for each decision: [fields]
+- review by a person: [sample size and frequency]
+- reporting a regulator could request: [what can be produced]
 
-**Article 22 compliance:**
-- Identification of decisions that fall within Article 22: [criteria]
-- Human review mechanism: [process]
-- Right to contest: [how communicated to data subjects, how handled operationally]
+**Automated decision-making:**
+- how decisions within the rules are identified: [criteria]
+- review by a person: [process]
+- how people can contest a decision: [how they are told, and how challenges are handled]
 
-## 7. Residual Risk and Sign-Off
+## 7. Residual risk and sign-off
 
-After controls applied:
+**Residual risk after controls:** [low, medium or high]
 
-**Residual risk level:** [low / medium / high]
-
-**If residual risk is high after mitigation:** ICO / DPC consultation required under Article 36 before processing begins.
+If the residual risk remains high after mitigation, consult the supervisory authority, such as the ICO or the Irish Data Protection Commission, before processing begins (Article 36).
 
 **Approval:**
-- DPO review: [date]
-- DPO sign-off: [yes/no with rationale]
-- Senior management approval: [name, date]
+- DPO advice: [date and summary]
+- Senior management approval: [name and date]
 
-**Review schedule:**
-- Routine review: [annually]
-- Triggered review: [on adding new tools / changing models / adding new data sources / on incident]
-
----
-
-## What this template doesn't cover
-
-- Sectoral regulations (financial services, healthcare, recruitment). Those layer on top of GDPR/AI Act.
-- Anti-discrimination obligations for agents making decisions about individuals. Needs separate equality assessment.
-- Liability allocation between operator and tool providers. Contract layer, not DPIA layer.
-
-For agent systems with complex sectoral exposure, this template is a starting point not a complete answer. Get a real review.
+**Review:**
+- routine review: [annually]
+- triggered review: [when tools, models or data sources change, and after any incident]
 
 ---
 
-*Template by Michael K. Onyekwere, [Janus Compliance](https://www.januscompliance.co.uk). Part of the [Compliance Engineering Toolkit](https://github.com/Thezenmonster/compliance-engineering-toolkit). Subscribe to [Compliance Engineering](https://complianceengineering.substack.com) for new patterns and updates. CC BY 4.0. Attribution required when reused.*
+## Outside the scope of this template
+
+- Sector rules, for example in financial services, healthcare or recruitment, which apply alongside the GDPR and the EU AI Act.
+- Equality obligations where an agent makes decisions about people, which need a separate equality assessment.
+- How liability is allocated between the operator and tool providers, which is a matter for the contracts.
+
+Agents with significant sector-specific exposure will need a fuller review than this template provides.
+
+---
+
+*Template by Michael K. Onyekwere, [Janus Compliance](https://www.januscompliance.co.uk). Part of the [Compliance Engineering Toolkit](https://github.com/Thezenmonster/compliance-engineering-toolkit). Legal references checked on 4 October 2026. New templates and updates are announced in [Compliance Engineering](https://complianceengineering.substack.com). Licensed CC BY 4.0; attribution required on reuse.*

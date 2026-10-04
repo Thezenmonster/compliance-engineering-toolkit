@@ -1,285 +1,271 @@
 # AI API Compliance Checklist
 
-**OpenAI / Anthropic DPA Setup, Zero-Retention Configuration, and Documentation Pack for GDPR Reviews**
+**Setting up the OpenAI and Anthropic APIs for GDPR compliance: data processing agreements, retention, zero data retention, documentation and the EU AI Act transparency duties**
 
-*Version 1.3: August 2026*
+*Version 1.4: October 2026. Provider terms checked 2 to 4 October 2026 unless stated otherwise.*
 
 *By Michael K. Onyekwere · CIPP/E · Common Law Qualified Lawyer (LLB, LLM) · januscompliance.co.uk*
 
-*Licensed CC BY 4.0. Attribution required when reused.*
+*Licensed CC BY 4.0. Attribution required on reuse.*
 
 ---
 
 ## Who this is for
 
-You are building or operating a product that calls the OpenAI API, the Anthropic API, or both, on behalf of a controller subject to GDPR, UK DPA 2018, or an equivalent regime. You need to evidence that the controller-to-processor relationship is configured correctly, that retention is bounded, and that a procurement reviewer or DPIA panel can sign off without coming back with a list of follow-ups.
-
-This is not a discovery document. It is a setup checklist. The expected reader has already decided to use the API and needs the compliance work shipped to production.
+This checklist is for organisations building or operating a product that calls the OpenAI API, the Anthropic API or both, on behalf of a controller subject to the EU GDPR, the UK GDPR or an equivalent regime. It assumes the decision to use the API has been made, and it covers the work needed to show that the processor relationship is set up correctly, that retention is limited, and that a procurement reviewer or DPIA panel has the evidence it needs.
 
 ---
 
 ## How to use this checklist
 
-Each section has a small number of tasks. For each task: confirm the action is complete, capture the evidence, and file the evidence in the documentation pack at the back of this PDF.
-
-The worked example at the end shows what a completed setup looks like for a hypothetical UK fintech using the OpenAI API for customer support summarisation.
+Each section contains a small number of tasks. For each one, confirm the action is complete, capture the evidence, and file it in the documentation pack described in Part 4. The worked example at the end shows a completed setup for a fictional UK fintech using the OpenAI API to summarise customer support conversations.
 
 ---
 
-## Part 1: DPA scoping and execution
+## Part 1: Data processing agreements
 
-### 1.1 Identify the legal entity acting as controller
+### 1.1 Identify the controller
 
-The controller is the legal person that determines purposes and means of processing. For most SaaS or fintech products, this is the customer-facing company entity. For multi-entity groups, confirm which entity is the controller before signing.
+The controller is the legal person that determines the purposes and means of the processing. For most products this is the customer-facing company, but in a group of companies the controlling entity should be confirmed before any terms are accepted.
 
-- [ ] Controller entity name confirmed (legal name, not trading name)
-- [ ] Controller registration number captured
-- [ ] Controller's registered office address captured
+- [ ] Controller's legal name confirmed (not a trading name)
+- [ ] Controller's registration number recorded
+- [ ] Controller's registered office recorded
 
-### 1.2 Sign the OpenAI Data Processing Addendum
+### 1.2 OpenAI Data Processing Addendum
 
-OpenAI's DPA is a click-through agreement available through the OpenAI platform account at `platform.openai.com/account/data-processing-addendum`. It activates on signature and applies retroactively to API usage under the account.
+OpenAI's Data Processing Addendum, published at `openai.com/policies/data-processing-addendum`, was updated on 1 December 2025 and took effect on 1 January 2026. It is incorporated into the OpenAI Services Agreement, which a business customer accepts by agreeing to it, by accepting an order form or by using the services. Customers based in the EEA or Switzerland contract with OpenAI Ireland Ltd and other customers with OpenAI OpCo, LLC. The DPA page also provides a link to execute the DPA, which is worth using so that you hold a signed record.
 
-- [ ] OpenAI account access confirmed (admin-level access required to sign)
-- [ ] DPA signed under the correct controller legal name
-- [ ] Signed DPA PDF saved to documentation pack with timestamp
+- [ ] Business account confirmed (there is no DPA for consumer ChatGPT)
+- [ ] Contracting OpenAI entity recorded
+- [ ] DPA executed through the DPA page, and the signed copy saved with the date
 - [ ] Signatory name and role recorded
+
+### 1.3 Anthropic Commercial Terms and DPA
+
+Anthropic's Data Processing Addendum is incorporated into its Commercial Terms of Service (`anthropic.com/legal/commercial-terms`), so accepting the Commercial Terms also accepts the DPA. The version checked, dated 24 February 2025, is governed by Irish law and incorporates the Standard Contractual Clauses with the UK and Swiss addenda.
+
+- [ ] Account opened under the controller's legal name
+- [ ] Commercial Terms accepted by an authorised person
+- [ ] Record of acceptance saved (confirmation email or screenshot)
 - [ ] Effective date recorded
 
-### 1.3 Sign the Anthropic Commercial Terms and DPA
+### 1.4 Sub-processor lists
 
-Anthropic's terms are at `anthropic.com/legal/commercial-terms`. The DPA is incorporated by reference. The Anthropic console requires an authorised signatory to accept the terms before API keys are issued under the controller account.
+Both providers publish sub-processor lists that change over time. OpenAI's DPA requires it to notify changes and gives customers 30 days from notice to object.
 
-- [ ] Anthropic account created under the correct controller legal name
-- [ ] Commercial Terms accepted by an authorised signatory
-- [ ] DPA acknowledgement screenshot or confirmation email saved
-- [ ] Effective date recorded
-
-### 1.4 Track sub-processor lists
-
-Both OpenAI and Anthropic publish sub-processor lists that change. The DPA obliges you to monitor for changes and surface material changes to the controller's compliance function.
-
-- [ ] OpenAI sub-processor list URL added to register: `openai.com/policies/sub-processor-list`
-- [ ] Anthropic sub-processor list URL added to register: `anthropic.com/subprocessors` (redirects to the Trust Center)
-- [ ] Quarterly review cadence scheduled (recommend the first Monday of each quarter)
-- [ ] Process for escalating new sub-processors to the DPO documented
+- [ ] OpenAI list recorded: `platform.openai.com/subprocessors`
+- [ ] Anthropic list recorded: `anthropic.com/subprocessors`
+- [ ] Notifications of changes subscribed to, where the provider offers them
+- [ ] Review scheduled at least quarterly
+- [ ] Process for escalating new sub-processors to the DPO recorded
 
 ---
 
-## Part 2: Zero-retention and data residency configuration
+## Part 2: Retention, training and data residency
 
-### 2.1 OpenAI zero-retention enablement
+### 2.1 OpenAI retention and zero data retention
 
-OpenAI offers Zero Data Retention (ZDR) for API customers meeting eligibility criteria. ZDR ensures prompts and completions are not stored beyond the duration of the API call. ZDR must be requested through OpenAI; it is not enabled by default.
+By default, OpenAI generates abuse monitoring logs for API usage and retains them for up to 30 days, unless longer retention is required by law or is reasonably necessary to protect its services or third parties. Zero Data Retention and Modified Abuse Monitoring, which exclude customer content from those logs, are available to eligible customers only with OpenAI's prior approval and acceptance of additional requirements.
 
-- [ ] ZDR eligibility verified for your account tier
-- [ ] ZDR request submitted via OpenAI support
-- [ ] ZDR confirmation received in writing and saved to documentation pack
-- [ ] ZDR effective date recorded
-- [ ] If ZDR not available: 30-day default retention documented and risk-assessed against the controller's retention schedule
+- [ ] Eligibility for Zero Data Retention or Modified Abuse Monitoring checked
+- [ ] Request submitted, and approval received in writing and saved
+- [ ] Effective date recorded
+- [ ] Where neither is available: the 30-day default recorded and assessed against the controller's retention schedule
 
-### 2.2 OpenAI training-data exclusion
+### 2.2 OpenAI training
 
-API usage is excluded from training by default for paid accounts, but verify:
+OpenAI states that, since 1 March 2023, data sent to the API has not been used to train or improve its models unless the customer explicitly opts in to share it.
 
-- [ ] OpenAI account settings show "Allow training" disabled (or N/A for ZDR)
-- [ ] Screenshot of training-exclusion setting saved
-- [ ] Internal policy document references this default
+- [ ] Confirmed that no data-sharing opt-in is enabled for the organisation
+- [ ] OpenAI's statement saved with the date, for the documentation pack
 
-### 2.3 Anthropic data handling
+### 2.3 Anthropic retention, zero data retention and training
 
-Anthropic does not train its production models on customer API data per its current Commercial Terms. Confirm in writing where this is required for the documentation pack.
+Anthropic states that inputs and outputs from its commercial products are not used to train its models. Under its commercial retention policy, inputs and outputs are deleted within thirty days of receipt or generation, subject to exceptions for features that store data, usage-policy enforcement and legal holds. Zero data retention is available to qualifying enterprise customers, but Claude Fable 5.1, Mythos 5.1, Fable 5 and Mythos 5 are designated covered models that require thirty-day retention and are not available under zero data retention unless Anthropic expressly authorises it (checked 17 September 2026).
 
-- [ ] Anthropic data-handling page reviewed and current version saved
-- [ ] Anthropic retention default (30 days, per current terms) documented
-- [ ] Where the controller requires shorter retention, raise with Anthropic enterprise support before launch
+- [ ] Anthropic's retention and training position saved with the date
+- [ ] Models in use checked against the covered-model list
+- [ ] Zero data retention requested where the data warrants it, and confirmation saved
 
-### 2.4 Data residency
+### 2.4 Data residency and transfers
 
-Both providers expose region selection that affects where inference happens. Choose region(s) that match the controller's data residency requirements.
+Requests to OpenAI's and Anthropic's own APIs are processed in the United States, and neither provider has an entry on the EU-US Data Privacy Framework register (checked 2 to 3 October 2026), so transfers rest on the Standard Contractual Clauses incorporated in each DPA, with the UK Addendum for UK data. Where processing needs to stay in Europe, the usual route is a cloud platform: for example, Anthropic's Claude Opus 5, Sonnet 5 and Fable 5 run in-Region on Amazon Bedrock in Ireland and Stockholm (checked 17 September 2026), and OpenAI models are available through Azure in EU regions. On those platforms the cloud provider is the processor, so its DPA and retention terms apply.
 
-- [ ] OpenAI Azure deployment used where EU residency is required (Azure OpenAI Service in the EU regions)
-- [ ] Anthropic region selection documented (AWS Bedrock or Anthropic API)
-- [ ] Standard Contractual Clauses incorporated where data leaves the EEA / UK
-- [ ] Transfer Impact Assessment (TIA) completed for any onward transfer
+- [ ] Processing location recorded for each provider and model
+- [ ] Transfer mechanism recorded (Standard Contractual Clauses with the UK Addendum, or the cloud provider's terms)
+- [ ] Transfer impact assessment completed
+- [ ] Onward transfers to sub-processors recorded
 
 ---
 
 ## Part 3: Operational controls
 
-### 3.1 Logging discipline
+### 3.1 Logging
 
-What you log matters as much as what the API stores. The controller's logging system can become a privacy hotspot if prompts containing personal data are persisted to log files indefinitely.
+The controller's own logs can become the largest privacy risk if prompts containing personal data are kept indefinitely.
 
-- [ ] Application logs sanitised before storage (PII redaction at write time)
-- [ ] Log retention schedule documented (recommend 30 days for production traffic)
-- [ ] Log access controls documented (who can read prompts, under what circumstances)
-- [ ] Audit log for log access kept
+- [ ] Personal data removed or redacted from application logs before storage
+- [ ] Log retention period set and recorded
+- [ ] Access to logs restricted, with the access rules recorded
+- [ ] Access to logs itself logged
 
-### 3.2 Prompt and completion handling
+### 3.2 Prompts and outputs
 
-Prompts may contain personal data even when you are not asking for it (free-text fields, customer support transcripts, etc.). Treat user input as personal data by default.
+Prompts can contain personal data even when it is not requested, for example in free-text fields or support transcripts, so user input should be treated as personal data by default.
 
-- [ ] Free-text user input flagged as personal data in the data map
-- [ ] Sanitisation or filtering applied where the use case permits
-- [ ] User-facing notice that AI is involved in processing (Article 13 / 14 obligation)
-- [ ] Right to object documented where the AI processing is necessary for performance of a contract or based on legitimate interest
+- [ ] Free-text input recorded as personal data in the data map
+- [ ] Filtering or minimisation applied where the use case allows
+- [ ] Privacy notice explains that AI is used in the processing (Articles 13 and 14)
+- [ ] Right to object addressed where the processing relies on legitimate interests
 
-### 3.3 Lawful basis documented
+### 3.3 Lawful basis
 
-The controller selects the lawful basis under Article 6. For most product features the basis will be contract performance, legitimate interest, or consent. Document the choice and the analysis.
+The controller chooses the lawful basis under Article 6 for each purpose, usually performance of a contract, legitimate interests or consent, and records the analysis.
 
-- [ ] Lawful basis selected per processing purpose
-- [ ] Legitimate Interest Assessment (LIA) on file if Article 6(1)(f) is the basis
-- [ ] Consent capture flow documented if Article 6(1)(a) is the basis
-- [ ] Special category data exclusion confirmed (Article 9): if special category data is in scope, separate Article 9 condition required
+- [ ] Lawful basis recorded for each purpose
+- [ ] Legitimate interests assessment on file where Article 6(1)(f) is relied on
+- [ ] Consent process recorded where Article 6(1)(a) is relied on
+- [ ] Special category data identified, with an Article 9 condition recorded where it is in scope
 
-### 3.4 Automated decision-making (Article 22 / UK Articles 22A-22D)
+### 3.4 Automated decision-making (EU Article 22 and UK Articles 22A to 22D)
 
-If the AI output affects the data subject's legal status or has similarly significant effects (credit, employment, insurance, denial of service), the automated-decision rules apply. Under the EU GDPR this is Article 22. Under the UK GDPR, the Data (Use and Access) Act 2025 replaced Article 22 with Articles 22A to 22D from 5 February 2026, moving from a near-prohibition to a safeguards regime: a significant solely-automated decision is permitted provided the data subject receives information about it, can make representations, can obtain human intervention, and can contest it. The permissive UK position does not extend to special category data without a separate condition.
+Where an AI output is used to make a decision about a person based solely on automated processing, with legal or similarly significant effects, such as on credit, employment, insurance or access to a service, the automated decision-making rules apply. Under the EU GDPR this is Article 22. Under the UK GDPR, the Data (Use and Access) Act 2025 replaced Article 22 with Articles 22A to 22D from 5 February 2026, which permit such decisions subject to safeguards: the person must be given information about the decision, be able to make representations, be able to obtain human intervention and be able to contest the decision. Stricter limits continue to apply where the decision is based on special category data.
 
-- [ ] Applicability assessed (EU Article 22 and/or UK Articles 22A-22D)
-- [ ] For UK solely-automated significant decisions: the four safeguards in place (information, representations, human intervention, contest)
-- [ ] Human-in-the-loop documented where it applies
-- [ ] Right to obtain human intervention surfaced in the user-facing notice
-- [ ] Special category data handled under the stricter pre-2026 conditions
+- [ ] Applicability assessed under EU Article 22 and UK Articles 22A to 22D
+- [ ] For UK solely automated significant decisions: the four safeguards in place
+- [ ] Review by a person, with authority to change the outcome, recorded where it is relied on
+- [ ] Right to obtain human intervention explained in the privacy notice
+- [ ] Decisions based on special category data checked against the stricter conditions
 
 ---
 
-## Part 4: Documentation pack for procurement / DPIA review
+## Part 4: Documentation pack for procurement or DPIA review
 
-A procurement reviewer or DPIA panel will typically ask for the following. Have them ready before you submit for review.
+A procurement reviewer or DPIA panel will usually ask for the following, so have it ready before submitting the system for review.
 
-### 4.1 Vendor documentation
+### 4.1 Provider documents
 
-- [ ] Signed OpenAI DPA (PDF)
-- [ ] Signed Anthropic Commercial Terms acceptance (confirmation email or screenshot)
-- [ ] OpenAI sub-processor list (latest version, dated)
-- [ ] Anthropic sub-processor list (latest version, dated)
-- [ ] ZDR confirmation (where applicable)
-- [ ] Region selection evidence (account settings screenshot)
+- [ ] Signed OpenAI DPA, or record of acceptance of the Services Agreement
+- [ ] Record of acceptance of Anthropic's Commercial Terms
+- [ ] Current sub-processor lists for each provider, dated
+- [ ] Zero data retention approvals, where applicable
+- [ ] Evidence of processing region (account or platform settings)
 
-### 4.2 Controller documentation
+### 4.2 Controller documents
 
-- [ ] DPIA (if the processing is likely to result in high risk to data subjects)
-- [ ] Records of Processing Activities (RoPA) entry for this processing operation
-- [ ] LIA where legitimate interest is the lawful basis
-- [ ] User-facing privacy notice updated to reflect AI processing
-- [ ] Internal AI usage policy
+- [ ] DPIA, where the processing is likely to result in a high risk
+- [ ] Entry in the records of processing activities
+- [ ] Legitimate interests assessment, where relevant
+- [ ] Updated privacy notice
+- [ ] Internal policy on the use of AI
 
 ### 4.3 Operational evidence
 
-- [ ] Log sanitisation policy and sampling evidence
-- [ ] Retention schedule for prompts, completions, and derived data
-- [ ] Access controls policy for the API keys and the logs
-- [ ] Incident response plan covering AI-specific failure modes (prompt injection, jailbreak, output leakage)
+- [ ] Log redaction policy and evidence from sample checks
+- [ ] Retention schedule for prompts, outputs and derived data
+- [ ] Access controls for API keys and logs
+- [ ] Incident response plan covering AI-specific failures, such as prompt injection and disclosure of data in outputs
 
-### 4.4 Transfer documentation
+### 4.4 Transfer documents
 
-- [ ] Standard Contractual Clauses (Module Two: controller to processor): where the processor is outside the UK / EEA
-- [ ] UK International Data Transfer Agreement or Addendum where required
-- [ ] Transfer Impact Assessment (TIA)
-- [ ] Documented onward transfers (sub-processors and their locations)
+- [ ] Standard Contractual Clauses (Module Two, controller to processor) where the processor is outside the UK or EEA
+- [ ] UK International Data Transfer Agreement or UK Addendum where required
+- [ ] Transfer impact assessment
+- [ ] Onward transfers to sub-processors and their locations
 
 ---
 
 ## Part 5: EU AI Act Article 50 transparency duties (applying since 2 August 2026)
 
-If the API powers a customer-facing chatbot or generates content, the EU AI Act's transparency duties have applied since 2 August 2026 alongside GDPR, wherever Article 2's scope rules reach your system or its output. Which duties are yours depends on your role for each system: the provider develops it, or has it developed, and places it on the market or puts it into service under its own name or trademark; the deployer uses it in a professional context. Branding a vendor's tool alone does not make you the provider, though having a system developed for you and running it under your own name does. The free Article 50 Duty Mapper at `januscompliance.co.uk/tools/article-50-duty-mapper` maps role, duties, and dates per system in a few questions.
+Where the API powers a chatbot that interacts with people or generates content, the EU AI Act's transparency duties have applied since 2 August 2026 alongside the GDPR, wherever Article 2 brings the system or its output within scope. Which duties apply depends on your role for each system. The provider is the party that develops the system, or has it developed, and places it on the market or puts it into service under its own name or trademark; the deployer is the party that uses it in a professional context. Branding a supplier's tool does not by itself make you the provider, although having a system developed for you and running it under your own name does. The free [Article 50 Duty Mapper](https://www.januscompliance.co.uk/tools/article-50-duty-mapper) maps the role, duties and dates for each system.
 
 ### 5.1 Role classification
 
-- [ ] Each AI surface classified as provider or deployer, with the reasoning recorded
-- [ ] White-labelling and substantial-modification risk checked (either can shift you into provider duties)
-- [ ] EU reach confirmed (users, customers, or audiences in the EU; the Act reaches non-EU businesses the same extraterritorial way GDPR does)
+- [ ] Each AI system classified as provider or deployer, with the reasoning recorded
+- [ ] White-labelling and substantial modification checked, since either can make you a provider
+- [ ] EU reach confirmed: the Act applies to non-EU businesses whose systems or outputs are used in the EU
 
-### 5.2 Chatbot disclosure (Article 50(1), a provider duty)
+### 5.2 Disclosure for systems that interact with people (Article 50(1), a provider duty)
 
-- [ ] System designed so people are told they are interacting with AI, at the latest at first interaction
-- [ ] The "obvious to a reasonably well-informed, observant and circumspect person" exemption not relied on without documented reasoning
-- [ ] Deployers of vendor chatbots: disclosure verified in your own deployment, and the provider's Article 50 position obtained in writing
+- [ ] System designed so that people are told they are interacting with AI, at the latest at their first interaction
+- [ ] The exemption for cases obvious to a reasonably well-informed, observant and circumspect person relied on only with recorded reasoning
+- [ ] Deployers of a supplier's chatbot: disclosure checked in your own deployment, and the provider's Article 50 position obtained in writing
 
-### 5.3 Machine-readable marking of generated output (Article 50(2), a provider duty)
+### 5.3 Machine-readable marking of generated content (Article 50(2), a provider duty)
 
 - [ ] Outputs marked in a machine-readable format and detectable as artificially generated, so far as technically feasible
-- [ ] Systems on the market before 2 August 2026: marking compliant by 2 December 2026 (the Omnibus grace covers the marking duty only; no other Article 50 duty is deferred)
-- [ ] Systems placed on the market from 2 August 2026: marking from day one
+- [ ] Systems placed on the market before 2 August 2026: marking in place by 2 December 2026, under the transitional period introduced by the Digital Omnibus, which covers the marking duty only
+- [ ] Systems placed on the market from 2 August 2026: marking from the start
 
-### 5.4 Content labelling (Article 50(4), deployer duties)
+### 5.4 Labelling of content (Article 50(4), deployer duties)
 
-- [ ] Deepfakes (realistic AI image, audio, or video of people, places, or events) labelled as artificially generated or manipulated
-- [ ] AI-generated text published to inform the public on matters of public interest labelled, unless it has undergone human review and a person holds editorial responsibility for publication
-- [ ] The EU labelling icons (published June 2026) treated as optional presentation only: using an icon does not by itself discharge the duty
+- [ ] Deepfakes, meaning realistic AI-generated or manipulated images, audio or video, labelled as artificially generated or manipulated
+- [ ] AI-generated text published to inform the public on matters of public interest labelled, unless it has undergone human review and a person holds editorial responsibility for its publication
+- [ ] Any labelling icon used treated as presentation only, since using an icon does not by itself discharge the duty
 
-### 5.5 Emotion recognition red line
+### 5.5 Emotion recognition
 
-- [ ] No emotion recognition pointed at your own staff or students: prohibited since 2 February 2025 under Article 5(1)(f), and the Commission's guidelines read "workplace" broadly enough to cover recruitment, so candidates count
-- [ ] Emotion recognition on customers (call-centre sentiment tools and similar): a disclosure duty under Article 50(3) rather than a prohibition, assessed before deployment
+- [ ] No emotion recognition used on staff or students, which Article 5(1)(f) has prohibited since 2 February 2025; the Commission's guidelines read "workplace" broadly enough to include recruitment, so job candidates are covered
+- [ ] Emotion recognition used on customers, such as sentiment analysis in a call centre, assessed before deployment against the disclosure duty in Article 50(3)
 
-Penalties: transparency breaches carry fines up to EUR 15M or 3% of worldwide turnover; prohibited practices up to EUR 35M or 7%. Status: the Digital Omnibus amending the wider AI Act timeline was adopted in June 2026 (Parliament 16 June, Council 29 June) and signed on 8 July 2026.
+Fines for breaches of the transparency duties can reach €15 million or 3% of worldwide annual turnover, and for prohibited practices €35 million or 7%. The Digital Omnibus amending the AI Act's timetable was published in the Official Journal as Regulation (EU) 2026/1744 on 24 July 2026 and entered into force on 27 July 2026.
 
 ---
 
-## Worked example: UK fintech using OpenAI for customer support summarisation
+## Worked example: a UK fintech using OpenAI to summarise support conversations
 
-**Controller:** ExampleFintech Ltd, registered in England, registered office London EC2.
+**Controller:** ExampleFintech Ltd, a fictional company registered in England.
 
-**Use case:** Live chat transcripts summarised by the OpenAI Chat Completions API to populate a CRM record after the customer support agent closes the case.
+**Use case:** live chat transcripts are summarised through the OpenAI API to populate a CRM record once the support agent closes the case.
 
-**Personal data in scope:** Customer name (where mentioned in the chat), account reference, transaction details, free-text content of the customer's message.
+**Personal data in scope:** the customer's name where mentioned, account reference, transaction details and the free-text content of the customer's messages.
 
-**Lawful basis:** Article 6(1)(f) legitimate interest. The legitimate interest is operational efficiency and quality of customer service. The LIA records the necessity test, the balancing test against data subject expectations, and the safeguards applied (sanitisation, retention limit).
+**Lawful basis:** legitimate interests (Article 6(1)(f)), namely efficient and consistent customer service. The legitimate interests assessment records the necessity test, the balancing test against customers' expectations, and the safeguards applied, including filtering and limited retention.
 
-**Vendor configuration:**
-- OpenAI DPA signed by the ExampleFintech CFO on 12 March 2026
-- ZDR enabled on the account effective 18 March 2026 (confirmation email saved)
-- Azure OpenAI Service used for inference, deployed in the West Europe region
-- Training opt-out confirmed (account setting)
+**Provider configuration:**
+- OpenAI Services Agreement accepted, and the DPA executed through the DPA page by the company's CFO on 12 March 2026
+- Zero Data Retention approved for the organisation on 18 March 2026, with the approval saved
+- confirmed that no data-sharing opt-in is enabled
+- transfer recorded as relying on the Standard Contractual Clauses with the UK Addendum, with a transfer impact assessment on file
 
 **Operational controls:**
-- Application sanitises card numbers and authentication tokens before any API call
-- Application logs retain prompts for 30 days, then auto-purge
-- The summary written to the CRM is the only persisted output of the API call
-- User-facing notice updated to state that AI is used in support workflow
+- card numbers and authentication tokens removed before any API call
+- application logs keep prompts for 30 days and then delete them automatically
+- the summary written to the CRM is the only stored output of the API call
+- privacy notice updated to explain that AI is used in the support process
 
-**Automated-decision assessment:** the summary is used by a human agent for record-keeping, not for automated decisioning about the customer. The UK Articles 22A-22D (and EU Article 22) do not apply.
+**Automated decision-making:** the summary is used by a person for record-keeping and no decision about the customer is made from it automatically, so neither UK Articles 22A to 22D nor EU Article 22 applies.
 
-**DPIA:** not formally required (low risk profile) but a lightweight risk assessment is documented and signed off by the DPO.
+**DPIA:** the company screened the processing against the ICO's criteria and recorded its reasons for concluding that a full DPIA was not required, with a risk assessment signed off by the DPO. A controller reaching a different conclusion on its own facts would complete a full DPIA.
 
-**Sub-processor monitoring:** the OpenAI sub-processor list is reviewed quarterly by the privacy team. The list is appended to the DPIA file. Any new sub-processor flagged for assessment within 30 days of publication.
-
-The above pack passes a typical financial services procurement review without follow-up questions.
+**Sub-processors:** the privacy team reviews OpenAI's sub-processor list quarterly and assesses any new sub-processor within the 30-day objection period.
 
 ---
 
-## What this checklist does not cover
+## Outside the scope of this checklist
 
-- Fine-tuning, batch inference, or assistants API usage (separate compliance considerations apply)
-- Internal LLM deployments (self-hosted models have different controls)
-- Image, audio, or video API endpoints (sectoral rules may apply)
-- High-risk AI Act applicability: if your use case is high-risk, a fuller conformity assessment is required (standalone Annex III obligations apply from 2 December 2027 under the adopted Digital Omnibus; high-risk AI embedded in regulated products from 2 August 2028)
-- The detailed Records of Processing Activities (RoPA) entry: see the separate RoPA template in the Compliance Engineering Toolkit
+- Fine-tuning, batch processing and assistant features, which raise separate considerations
+- Self-hosted models, which need different controls
+- Image, audio and video endpoints, where sector rules may also apply
+- High-risk systems under the EU AI Act, which need a fuller conformity assessment; under the Digital Omnibus, the obligations for Annex III high-risk systems apply from 2 December 2027, and for high-risk AI in products covered by Annex I from 2 August 2028
 
 ---
 
 ## More from Janus Compliance
 
-**The Article 50 Duty Mapper (free).** Answer a few questions about your AI surfaces and get your duty map: your role, your duties, your dates, including the 2 December 2026 marking grace. `januscompliance.co.uk/tools/article-50-duty-mapper`
+**The Article 50 Duty Mapper (free).** Answer a few questions about your AI systems to see your role, duties and dates, including the 2 December 2026 marking deadline. `januscompliance.co.uk/tools/article-50-duty-mapper`
 
-**The Compliance Engineering newsletter.** Practitioner-grade analysis of AI regulation, verified against primary sources before it reaches you. `complianceengineering.substack.com`
+**The Compliance Engineering newsletter.** Analysis of AI regulation for engineering and compliance teams, checked against primary sources. `complianceengineering.substack.com`
 
-**The Article 50 compliance check.** A fixed-fee (GBP 250) written review of your actual AI surfaces against each Article 50 duty: your role per system, the exemptions you can rely on, and what to fix first, delivered within 72 hours. `januscompliance.co.uk/services/eu-ai-act-compliance`
+**The Article 50 compliance check.** A fixed-fee (£250) written review of your AI systems against each Article 50 duty, covering your role for each system, the exemptions available and what to address first, delivered within 72 hours. `januscompliance.co.uk/services/eu-ai-act-compliance`
 
 ---
 
 ## About this checklist
 
-This checklist is part of the Compliance Engineering Toolkit at `github.com/Thezenmonster/compliance-engineering-toolkit`. The toolkit is licensed CC BY 4.0 and may be reused with attribution.
-
-For consulting on AI compliance for your specific system, see `januscompliance.co.uk/services` or write to `michaelo@januscompliance.co.uk`.
-
-For the Compliance Engineering newsletter: practitioner-grade AI regulation writing: see `januscompliance.co.uk/newsletter`.
+This checklist is part of the Compliance Engineering Toolkit at `github.com/Thezenmonster/compliance-engineering-toolkit`, licensed CC BY 4.0 for reuse with attribution. For advice on a specific system, see `januscompliance.co.uk/services` or write to `michaelo@januscompliance.co.uk`.
 
 ---
 
-*Michael K. Onyekwere · Janus Compliance · August 2026*
+*Michael K. Onyekwere · Janus Compliance · October 2026*

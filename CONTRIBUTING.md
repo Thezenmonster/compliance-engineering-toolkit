@@ -1,48 +1,32 @@
 # Contributing
 
-This toolkit reflects compliance patterns I use in real consulting work. I update it when:
-- Regulations change (new EU AI Act guidance, ICO updates, NDPC enforcement)
-- New AI patterns emerge (multimodal models, on-device LLMs, new agent frameworks)
-- I find better ways to explain a pattern from working with a client
+The toolkit is updated when the law changes, for example through new EU AI Act guidance, ICO guidance or Nigeria Data Protection Commission directives, when new AI patterns need covering, and when a template can be explained more clearly.
 
 ## How to suggest improvements
 
-**Open a GitHub issue** if you spot:
-- A regulatory citation that's outdated or wrong
-- A pattern the templates don't yet cover
-- An ambiguity that confused you when applying a template
-- A jurisdiction-specific gap (the templates currently lean UK/EU/Nigeria)
+**Open a GitHub issue** if you find:
+- a legal citation that is outdated or wrong;
+- a pattern the templates do not yet cover;
+- wording that was ambiguous when you applied a template;
+- a gap for a particular jurisdiction, since the templates currently focus on the UK, the EU and Nigeria.
 
 **Open a pull request** if you have:
-- A new template for a pattern not yet covered
-- A correction to existing content
-- An adaptation for a specific sector (health, finance, recruitment)
+- a new template for a pattern not yet covered;
+- a correction to existing content;
+- an adaptation for a particular sector, such as health, finance or recruitment.
 
-Pull requests should:
-- Match the existing template structure
-- Include practical "how to use" guidance, not just the template skeleton
-- Cite regulatory sources where claims are made
-- Avoid jurisdiction-specific assumptions in shared templates (or clearly mark sector/jurisdiction-specific variants)
+Pull requests should follow the existing template structure, include guidance on how to use the template rather than only its headings, cite the source for every legal statement, and either avoid assumptions specific to one jurisdiction or mark the variant clearly.
 
-## What this toolkit will and won't include
+## What the toolkit includes
 
-**Will include:**
-- Generic patterns that apply across most AI deployments
-- Sector or jurisdiction-specific variants when there's enough demand
-- Working examples and how-to-use guidance
-
-**Won't include:**
-- Legal advice for specific situations (that's paid consulting)
-- Jurisdiction-specific filings or registrations (vary too much)
-- Anything that creates the impression these templates are a substitute for proper compliance review
+The toolkit includes general structures that apply across most AI deployments, variants for particular sectors or jurisdictions where there is enough demand, and worked examples. It does not include advice on specific situations, filings or registrations that vary by jurisdiction, or anything that could be mistaken for a substitute for a proper compliance review.
 
 ## Attribution
 
-Contributors will be credited in the relevant template's footer. Consistent contributors will be credited in the README.
+Contributors are credited in the footer of the template they contribute to, and regular contributors in the README.
 
 ## Questions
 
-For questions about the toolkit itself, open an issue.
-For questions about applying templates to your specific system, that's [paid consulting](https://www.januscompliance.co.uk/contact?intent=scoping-review&source=toolkit-contributing).
+For questions about the toolkit, open an issue. For help applying a template to your own system, see the [scoping review](https://www.januscompliance.co.uk/contact?intent=scoping-review&source=toolkit-contributing).
 
 Michael K. Onyekwere
