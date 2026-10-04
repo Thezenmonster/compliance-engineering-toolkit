@@ -2,7 +2,7 @@
 
 **Setting up the OpenAI and Anthropic APIs for GDPR compliance: data processing agreements, retention, zero data retention, documentation and the EU AI Act transparency duties**
 
-*Version 1.4: October 2026. Provider terms checked 2 to 4 October 2026 unless stated otherwise.*
+*Version 1.4.1: October 2026. Provider terms checked 2 to 4 October 2026 unless stated otherwise.*
 
 *By Michael K. Onyekwere · CIPP/E · Common Law Qualified Lawyer (LLB, LLM) · januscompliance.co.uk*
 
@@ -43,7 +43,7 @@ OpenAI's Data Processing Addendum, published at `openai.com/policies/data-proces
 
 ### 1.3 Anthropic Commercial Terms and DPA
 
-Anthropic's Data Processing Addendum is incorporated into its Commercial Terms of Service (`anthropic.com/legal/commercial-terms`), so accepting the Commercial Terms also accepts the DPA. The version checked, dated 24 February 2025, is governed by Irish law and incorporates the Standard Contractual Clauses with the UK and Swiss addenda.
+Anthropic's Data Processing Addendum is incorporated into its Commercial Terms of Service (`anthropic.com/legal/commercial-terms`), so accepting the Commercial Terms also accepts the DPA. In the version checked, dated 24 February 2025, the contracting entity for customers in the EEA, Switzerland or the UK is Anthropic Ireland, Limited, the governing law is Irish law, and the DPA incorporates the Standard Contractual Clauses with the UK and Swiss addenda.
 
 - [ ] Account opened under the controller's legal name
 - [ ] Commercial Terms accepted by an authorised person
@@ -52,7 +52,7 @@ Anthropic's Data Processing Addendum is incorporated into its Commercial Terms o
 
 ### 1.4 Sub-processor lists
 
-Both providers publish sub-processor lists that change over time. OpenAI's DPA requires it to notify changes and gives customers 30 days from notice to object.
+Both providers publish sub-processor lists that change over time. OpenAI's DPA requires it to notify changes and gives customers 30 days from notice to object. Anthropic's DPA requires reasonable notice of a new sub-processor and gives customers 15 days from that notice to object on reasonable data privacy or security grounds.
 
 - [ ] OpenAI list recorded: `platform.openai.com/subprocessors`
 - [ ] Anthropic list recorded: `anthropic.com/subprocessors`
@@ -82,7 +82,7 @@ OpenAI states that, since 1 March 2023, data sent to the API has not been used t
 
 ### 2.3 Anthropic retention, zero data retention and training
 
-Anthropic states that inputs and outputs from its commercial products are not used to train its models. Under its commercial retention policy, inputs and outputs are deleted within thirty days of receipt or generation, subject to exceptions for features that store data, usage-policy enforcement and legal holds. Zero data retention is available to qualifying enterprise customers, but Claude Fable 5.1, Mythos 5.1, Fable 5 and Mythos 5 are designated covered models that require thirty-day retention and are not available under zero data retention unless Anthropic expressly authorises it (checked 17 September 2026).
+Anthropic's Commercial Terms state that it may not train models on customer content. Anthropic describes its retention in two places, which should be recorded separately: its Privacy Center states that API inputs and outputs are deleted within 30 days of receipt or generation, subject to exceptions, while its developer documentation states that conversation content is not retained by default, except for covered models. Content flagged by its trust and safety systems may be kept for up to two years, even under zero data retention. Zero data retention is available with Anthropic's approval and does not cover several features, including batch processing, the Files API, code execution and the MCP connector. Claude Fable 5.1, Mythos 5.1, Fable 5 and Mythos 5 are covered models, retained for at least 30 days, and Anthropic's Service Specific Terms state that its right to retain and review covered-model data supersedes zero data retention commitments (checked 4 October 2026).
 
 - [ ] Anthropic's retention and training position saved with the date
 - [ ] Models in use checked against the covered-model list
@@ -90,7 +90,9 @@ Anthropic states that inputs and outputs from its commercial products are not us
 
 ### 2.4 Data residency and transfers
 
-Requests to OpenAI's and Anthropic's own APIs are processed in the United States, and neither provider has an entry on the EU-US Data Privacy Framework register (checked 2 to 3 October 2026), so transfers rest on the Standard Contractual Clauses incorporated in each DPA, with the UK Addendum for UK data. Where processing needs to stay in Europe, the usual route is a cloud platform: for example, Anthropic's Claude Opus 5, Sonnet 5 and Fable 5 run in-Region on Amazon Bedrock in Ireland and Stockholm (checked 17 September 2026), and OpenAI models are available through Azure in EU regions. On those platforms the cloud provider is the processor, so its DPA and retention terms apply.
+Neither OpenAI nor Anthropic has an entry on the EU-US Data Privacy Framework register (checked 4 October 2026). Anthropic's DPA incorporates the Standard Contractual Clauses with the UK and Swiss addenda. OpenAI's DPA treats UK data, processed by OpenAI OpCo, LLC under the Standard Contractual Clauses as amended by the UK Addendum, differently from EEA and Swiss data, which OpenAI Ireland Limited transfers onward under agreements containing the Standard Contractual Clauses or an adequacy decision.
+
+On processing location, Anthropic's own API runs inference in any available geography by default, or only in the US on request, stores data at rest in the US and offers no EU option. OpenAI offers EU data residency to eligible customers through `eu.api.openai.com`, subject to approval, abuse-monitoring controls and a Modified Retention amendment. Where Claude processing needs to stay in Europe, the route is a cloud platform, and on Amazon Bedrock it depends on the model: Claude Opus 5 and Sonnet 5 run in-Region in Ireland and Stockholm, and Sonnet 5 also in London, while Claude Fable 5, Fable 5.1 and Mythos 5.1 are available in the EU Regions only through global routing (checked 4 October 2026). On a cloud platform the cloud provider is generally the processor, but Anthropic's Service Specific Terms provide that it processes covered-model data under its own DPA.
 
 - [ ] Processing location recorded for each provider and model
 - [ ] Transfer mechanism recorded (Standard Contractual Clauses with the UK Addendum, or the cloud provider's terms)
