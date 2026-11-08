@@ -37,7 +37,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to suggest corrections or new tem
 
 ## Limits
 
-**These templates are not legal advice.** They reflect structures that suit a typical AI system, and your system may need different decisions. A DPIA for a deployed system needs a risk assessment specific to its architecture and data flows; if you would like that done for you, start with a [£500 scoping review](https://www.januscompliance.co.uk/contact?intent=scoping-review&source=toolkit).
+**These templates are not legal advice.** They reflect structures that suit a typical AI system, and your system may need different decisions. A DPIA for a deployed system needs a risk assessment specific to its architecture and data flows; if you would like that done for you, start with a [£500 scoping review](https://www.januscompliance.co.uk/contact?intent=scoping-review&source=toolkit). If you would rather draft the assessment yourself, the [Janus DPIA tool](https://www.januscompliance.co.uk/tools/dpia) takes you through it in a conversation, under UK GDPR or the EU GDPR as applied in Ireland, and is free to complete.
 
 **They are not exhaustive, and the law changes.** New AI patterns and new rules, such as amendments to the EU AI Act, can change what a template needs to cover. Each document records the date its facts were last checked, and changes are announced in the newsletter.
 
